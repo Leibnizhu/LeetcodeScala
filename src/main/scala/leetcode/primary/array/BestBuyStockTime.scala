@@ -8,7 +8,7 @@ package leetcode.primary.array
 object BestBuyStockTime {
   def maxProfit(prices: Array[Int]): Int = {
     /**
-      *
+      * 求每两个价格之间的差值,大于0则有收益,加入收益,否则不买卖
       * @param prices 价格曲线
       * @param profit 收益
       * @param i      游标

@@ -21,6 +21,10 @@ object MoveZeroes {
           len + 1
         } else len, i + 1)
 
+    /**
+      * 跟RemoveDuplicatesFromSortedArray类似,判断条件变成找非0的数,
+      * 处理完之后非零的数都排在前面,把后面的数全部赋值0即可
+      */
     if (nums != null && nums.length != 0) {
       val len = distinct(nums, 0, 0)
       for(i <- len until nums.length) nums(i) = 0

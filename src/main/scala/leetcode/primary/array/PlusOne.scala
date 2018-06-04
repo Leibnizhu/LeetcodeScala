@@ -7,6 +7,13 @@ package leetcode.primary.array
   */
 object PlusOne {
   def plusOne(digits: Array[Int]): Array[Int] = {
+    /**
+      * 当前位相加,如果超过10,找下一位加一,如果超过10且最高位,拼接数组多加一个1
+      * @param digits 数字
+      * @param delta 变化值
+      * @param i 游标
+      * @return
+      */
     def plus(digits: Array[Int], delta: Int, i: Int): Array[Int] = {
       val res = digits(i) + delta
       digits(i) = res % 10

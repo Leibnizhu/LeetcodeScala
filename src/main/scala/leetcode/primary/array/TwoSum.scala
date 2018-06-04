@@ -21,6 +21,10 @@ object TwoSum {
       }
     }
 
+    /*
+     * 排序后,两边分别有游标往中间靠,找到满足条件的位置,最后再在未排序的数组来查找到下标,
+     * 排序O(nlogn),找求和O(n),两次找下标O(n),总体O(nlogn)
+     */
     val sorted = nums.sorted
     val (l,r) = seek(sorted, target, 0, nums.length - 1)
     Array(nums.indexOf(sorted(l)), nums.lastIndexOf(sorted(r)))

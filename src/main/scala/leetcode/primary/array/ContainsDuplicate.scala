@@ -7,6 +7,9 @@ import scala.collection.mutable
   * 如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
   */
 object ContainsDuplicate {
+  /**
+    * 直接用HashSet存储,判断size即可,O(n)
+    */
   def containsDuplicate(nums: Array[Int]): Boolean = {
     if (nums == null)
       false

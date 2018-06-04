@@ -5,6 +5,10 @@ package leetcode.primary.array
   * 给定两个数组，写一个方法来计算它们的交集。
   */
 object Intersect {
+  /**
+    * 两个数组分别排序,然后分别带一个游标从0开始遍历,
+    * 找到相同的就是交集的内容,不同的较小者往前走,直到队尾
+    */
   def intersect(nums1: Array[Int], nums2: Array[Int]): Array[Int] = {
     val sortedNums1 = nums1.sorted
     val sortedNums2 = nums2.sorted

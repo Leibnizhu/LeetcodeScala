@@ -7,6 +7,7 @@ package leetcode.primary.array
 object RemoveDuplicatesFromSortedArray {
   def removeDuplicates(nums: Array[Int]): Int = {
     /**
+      * 遍历, len保存着当前找到的不重复的个数, 找到新的数放到前面
       *
       * @param ar 数组
       * @param len 当前不重复的长度
@@ -18,7 +19,7 @@ object RemoveDuplicatesFromSortedArray {
         len
       else
         distinct(ar, if (ar(i) != ar(len - 1)) {
-          ar(len) = ar(i);
+          ar(len) = ar(i)
           len + 1
         } else len, i + 1)
 
