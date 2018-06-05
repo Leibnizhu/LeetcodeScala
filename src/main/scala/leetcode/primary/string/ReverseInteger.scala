@@ -10,21 +10,18 @@ object ReverseInteger {
       0
     } else {
       val neg = x < 0
-      var abs:Long = if (neg) -x else x
+      var abs = if (neg) -x else x
       val len = Math.floor(Math.log10(abs) + 1).intValue
       val nums = new Array[Int](len)
 //      println(neg, abs, len)
       for (i <- 0 until len) {
-        nums(i) = (abs % 10).intValue
+        nums(i) = abs % 10
         abs /= 10
       }
 //      println(nums.toList)
       abs = 0
-      for (i <- 0 until len){
-        abs =  abs * 10 + nums(i)
-      }
-      if(abs > Integer.MAX_VALUE)
-        abs = 0
+      for (i <- 0 until len)
+        abs = if(abs > Integer.MAX_VALUE / 10 || (abs == Integer.MAX_VALUE / 10 && nums(i) > Integer.MAX_VALUE % 10)) 0 else abs * 10 + nums(i)
 
       if (neg) -abs.intValue else abs.intValue
     }
