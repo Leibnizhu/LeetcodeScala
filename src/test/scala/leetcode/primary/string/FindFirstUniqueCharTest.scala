@@ -2,7 +2,7 @@ package leetcode.primary.string
 
 import org.scalatest.FunSuite
 
-class FindFirstUniqueCharTest  extends FunSuite {
+class FindFirstUniqueCharTest extends FunSuite {
 
   test("leetcode") {
     check("leetcode", 0)
