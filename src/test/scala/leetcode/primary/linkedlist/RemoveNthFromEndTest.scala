@@ -1,6 +1,5 @@
 package leetcode.primary.linkedlist
 
-import leetcode.primary.linkedlist.RemoveNthFromEnd.ListNode
 import org.scalatest.FunSuite
 
 class RemoveNthFromEndTest extends FunSuite {

@@ -72,7 +72,4 @@ object IsPalindrome {
       reverseListRecursive(second, secondBeforeNext) //递归翻转tail链表
     }
   }
-
-  case class ListNode(var x: Int, var next: ListNode)
-
 }

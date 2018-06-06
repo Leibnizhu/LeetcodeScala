@@ -1,6 +1,5 @@
 package leetcode.primary.linkedlist
 
-import leetcode.primary.linkedlist.IsPalindrome.ListNode
 import org.scalatest.FunSuite
 
 class IsPalindromeTest extends FunSuite {

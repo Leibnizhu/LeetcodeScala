@@ -1,6 +1,5 @@
 package leetcode.primary.linkedlist
 
-import leetcode.primary.linkedlist.HasCycle.ListNode
 import org.scalatest.FunSuite
 
 class HasCycleTest extends FunSuite {
@@ -36,21 +35,21 @@ class HasCycleTest extends FunSuite {
     assert(result == shouldBe)
   }
 
-  private def makeLinkedList(nodes: Array[Int], len: Int, cycle: Boolean): ListNode = {
+  private def makeLinkedList(nodes: Array[Int], len: Int, cycle: Boolean): HasCycle.ListNode = {
     if (len == 0) {
       null
     } else {
-      val nodeList = new Array[ListNode](len)
-      nodeList(len - 1) = new ListNode(nodes.last, null)
+      val nodeList = new Array[HasCycle.ListNode](len)
+      nodeList(len - 1) = new HasCycle.ListNode(nodes.last, null)
       for (i <- len - 2 to 0 by -1) {
-        nodeList(i) = new ListNode(nodes(i), nodeList(i + 1))
+        nodeList(i) = new HasCycle.ListNode(nodes(i), nodeList(i + 1))
       }
       if (cycle) nodeList(len - 1).next = nodeList(0)
       nodeList(0)
     }
   }
 
-  private def linkedListToArray(newList: ListNode, len: Int): Array[Int] = {
+  private def linkedListToArray(newList: HasCycle.ListNode, len: Int): Array[Int] = {
     var cur = newList
     val result = new Array[Int](len)
     var i = 0

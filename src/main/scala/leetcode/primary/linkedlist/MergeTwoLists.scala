@@ -26,7 +26,4 @@ object MergeTwoLists {
       newHead
     }
   }
-
-  case class ListNode(var x: Int, var next: ListNode)
-
 }

@@ -1,6 +1,5 @@
 package leetcode.primary.linkedlist
 
-import leetcode.primary.linkedlist.ReverseList.ListNode
 import org.scalatest.FunSuite
 
 class reverseListTest extends FunSuite {

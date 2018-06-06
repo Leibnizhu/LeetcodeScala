@@ -1,6 +1,5 @@
 package leetcode.primary.linkedlist
 
-import leetcode.primary.linkedlist.MergeTwoLists.ListNode
 import org.scalatest.FunSuite
 
 class MergeTwoListsTest extends FunSuite {
