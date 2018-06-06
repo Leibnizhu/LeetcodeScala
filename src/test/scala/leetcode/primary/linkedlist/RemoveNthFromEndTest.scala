@@ -21,13 +21,9 @@ class RemoveNthFromEndTest extends FunSuite {
     check(Array(1,2,3), 3)
   }
 
-  def check(nodes: Array[Int], n: Int) = {
+  def check(nodes: Array[Int], n: Int):Unit = {
     val len = nodes.length
-    val nodeList = new Array[ListNode](len)
-    nodeList(len - 1) = ListNode(nodes.last, null)
-    for (i <- len - 2 to 0 by -1) {
-      nodeList(i) = ListNode(nodes(i), nodeList(i + 1))
-    }
+    val nodeList = makeLinkedList(nodes, len)
     val head = RemoveNthFromEnd.removeNthFromEnd(nodeList(0), n)
 
     if (n == nodes.length) {
@@ -44,4 +40,12 @@ class RemoveNthFromEndTest extends FunSuite {
     }
   }
 
+  private def makeLinkedList(nodes: Array[Int], len:Int): Array[ListNode] = {
+    val nodeList = new Array[ListNode](len)
+    nodeList(len - 1) = ListNode(nodes.last, null)
+    for (i <- len - 2 to 0 by -1) {
+      nodeList(i) = ListNode(nodes(i), nodeList(i + 1))
+    }
+    nodeList
+  }
 }
