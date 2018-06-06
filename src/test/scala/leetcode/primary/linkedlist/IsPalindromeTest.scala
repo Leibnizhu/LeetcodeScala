@@ -25,33 +25,8 @@ class IsPalindromeTest extends FunSuite {
 
   private def check(arr1: Array[Int], shouldBe: Boolean): Unit = {
     val len1 = arr1.length
-    val list1 = makeLinkedList(arr1, len1)
+    val list1 = ListNode.makeLinkedList(arr1, len1)
     val result = IsPalindrome.isPalindrome(list1)
     assert(result == shouldBe)
-  }
-
-  private def makeLinkedList(nodes: Array[Int], len: Int): ListNode = {
-    if (len == 0) {
-      null
-    } else {
-      val nodeList = new Array[ListNode](len)
-      nodeList(len - 1) = ListNode(nodes.last, null)
-      for (i <- len - 2 to 0 by -1) {
-        nodeList(i) = ListNode(nodes(i), nodeList(i + 1))
-      }
-      nodeList(0)
-    }
-  }
-
-  private def linkedListToArray(newList: ListNode, len: Int): Array[Int] = {
-    var cur = newList
-    val result = new Array[Int](len)
-    var i = 0
-    while (cur != null) {
-      result(i) = cur.x
-      i += 1
-      cur = cur.next
-    }
-    result
   }
 }
