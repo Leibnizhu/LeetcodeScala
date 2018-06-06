@@ -32,11 +32,7 @@ class RemoveNthFromEndTest extends FunSuite {
 
     if (n == nodes.length) {
       //删除队头
-      if (n == 1) {
-        assert(head == null)
-      } else {
-        assert(head.equals(nodeList(1)))
-      }
+      assert(head == nodeList(0).next || head.equals(nodeList(0).next))
     } else if (n == 1) {
       //删除队尾,删除点的下一个为null
       assert(nodeList(len - 1 - n).next == null)

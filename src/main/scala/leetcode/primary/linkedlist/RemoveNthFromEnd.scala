@@ -13,7 +13,7 @@ object RemoveNthFromEnd {
     *
     * @param head 链表头
     * @param n    删除倒数第n个节点
-    * @return 头节点
+    * @return 头节点,因为如果删除头结点,那么头结点也删掉了
     */
   def removeNthFromEnd(head: ListNode, n: Int): ListNode = {
     var front = head
