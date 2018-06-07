@@ -5,19 +5,19 @@ import org.scalatest.FunSuite
 class JudgePalindromeTest extends FunSuite {
 
   test("A man, a plan, a canal: Panama") {
-    check("A man, a plan, a canal: Panama", true)
+    check("A man, a plan, a canal: Panama", shouldBe = true)
   }
 
   test("race a car") {
-    check("race a car",false)
+    check("race a car",shouldBe = false)
   }
 
   test("aaaa") {
-    check("aaaa",true)
+    check("aaaa",shouldBe = true)
   }
 
   test("empty") {
-    check("   ",true)
+    check("   ",shouldBe = true)
   }
 
   private def check(str: String, shouldBe:Boolean) = {

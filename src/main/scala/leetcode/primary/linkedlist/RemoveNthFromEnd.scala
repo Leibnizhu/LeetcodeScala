@@ -19,7 +19,7 @@ object RemoveNthFromEnd {
     var front = head
     var back = head
     //前游标先走n步
-    for (i <- 0 until n) front = front.next
+    for (_ <- 0 until n) front = front.next
     if (front == null) {
       //前面已经走到队尾
       head.next

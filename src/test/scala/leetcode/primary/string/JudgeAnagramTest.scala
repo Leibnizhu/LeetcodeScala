@@ -5,15 +5,15 @@ import org.scalatest.FunSuite
 class JudgeAnagramTest extends FunSuite {
 
   test("anagram,nagaram") {
-    check("anagram", "nagaram",true)
+    check("anagram", "nagaram",shouldBe = true)
   }
 
   test("rat,cat") {
-    check("rat", "cat",false)
+    check("rat", "cat",shouldBe = false)
   }
 
   test("a,a") {
-    check("a", "a",true)
+    check("a", "a",shouldBe = true)
   }
 
   private def check(str1: String, str2:String, shouldBe:Boolean) = {
