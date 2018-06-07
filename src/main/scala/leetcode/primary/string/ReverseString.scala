@@ -1,6 +1,8 @@
 package leetcode.primary.string
 
 /**
+  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/32/
+  *
   * 请编写一个函数，其功能是将输入的字符串反转过来。
   */
 object ReverseString {
