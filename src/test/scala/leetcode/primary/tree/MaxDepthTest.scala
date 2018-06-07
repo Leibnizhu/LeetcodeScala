@@ -17,7 +17,7 @@ class MaxDepthTest extends FunSuite {
   }
 
   def check(array: Array[Integer], shouldBe: Int): Unit = {
-    val treeRoot = TreeNode.buildTree(array)
+    val treeRoot = TreeNode(array)
     val depth = MaxDepth.maxDepth(treeRoot)
     assert(depth == shouldBe)
   }

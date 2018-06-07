@@ -53,7 +53,7 @@ class LevelOrderTraverseTest extends FunSuite{
   }
 
   def check(arr: Array[Integer], shouldBe: List[List[Int]]): Unit = {
-    val tree = TreeNode.buildTree(arr)
+    val tree = TreeNode(arr)
     val result = LevelOrderTraverse.levelOrder(tree)
     assert(result.size == shouldBe.size)
     for(i <- result.indices){

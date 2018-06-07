@@ -53,7 +53,7 @@ class IsSymmetricTest extends FunSuite{
   }
 
   def check(arr: Array[Integer], shouldBe: Boolean): Unit = {
-    val tree = TreeNode.buildTree(arr)
+    val tree = TreeNode(arr)
     val result = IsSymmetric.isSymmetric(tree)
     assert(result == shouldBe)
   }

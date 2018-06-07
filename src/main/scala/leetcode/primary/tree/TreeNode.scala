@@ -9,7 +9,7 @@ object TreeNode {
     * @param nodes 节点数组,null为没有节点,自树根开始按层排列下来(按完全二叉树,没有的补上null)
     * @return 树根
     */
-  def buildTree(nodes: Array[Integer]): TreeNode = {
+  def apply(nodes: Array[Integer]): TreeNode = {
     if (nodes == null || nodes.length == 0) {
       null
     } else {
@@ -37,8 +37,8 @@ object TreeNode {
   /**
     * 常数时间求大于等于cap的最小二次幂
     */
-  def min2Power(cap: Int): Int = {
-    var n = cap - 1
+  private def min2Power(size: Int): Int = {
+    var n = size - 1
     n |= n >>> 1
     n |= n >>> 2
     n |= n >>> 4

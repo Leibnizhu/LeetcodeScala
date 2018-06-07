@@ -44,7 +44,7 @@ class IsValidBSTTEst extends FunSuite{
   }
 
   def check(arr: Array[Integer], shouldBe: Boolean): Unit = {
-    val tree = TreeNode.buildTree(arr)
+    val tree = TreeNode(arr)
     val result = IsValidBST.isValidBST(tree)
     assert(result == shouldBe)
   }
