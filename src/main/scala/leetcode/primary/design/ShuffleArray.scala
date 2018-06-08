@@ -3,6 +3,8 @@ package leetcode.primary.design
 import scala.util.Random
 
 /**
+  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/24/design/58/
+  *
   * 打乱一个没有重复元素的数组。
  *
   * @param _nums 原始数组
