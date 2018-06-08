@@ -1,0 +1,117 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: IsValidBST</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.tree</a> ]
+</div>
+
+<h1>Coverage Summary for Class: IsValidBST (leetcode.primary.tree)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">IsValidBST$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.tree
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/7/trees/48/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
+<i>7</i>&nbsp;  * 一个二叉搜索树具有如下特征：
+<i>8</i>&nbsp;  * 节点的左子树只包含小于当前节点的数。
+<i>9</i>&nbsp;  * 节点的右子树只包含大于当前节点的数。
+<i>10</i>&nbsp;  * 所有左子树和右子树自身必须也是二叉搜索树。
+<i>11</i>&nbsp;  */
+<b class="fc"><i>12</i>&nbsp;object IsValidBST {</b>
+<i>13</i>&nbsp;  def isValidBST(root: TreeNode): Boolean = {
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;      * 递归,满足BST的条件:左树是bst,右树是bst,当前节点在min max 范围内
+<i>16</i>&nbsp;      *
+<i>17</i>&nbsp;      * @param cur 当前节点
+<i>18</i>&nbsp;      * @param min 当前最小值(不包含)
+<i>19</i>&nbsp;      * @param max 当前最大值(不包含)
+<i>20</i>&nbsp;      * @return 当前节点下面的树是否二叉搜索树
+<i>21</i>&nbsp;      */
+<i>22</i>&nbsp;    def isBinarySearchTree(cur: TreeNode, min: Long, max: Long): Boolean =
+<b class="fc"><i>23</i>&nbsp;      if (cur == null) true else</b>
+<b class="fc"><i>24</i>&nbsp;        cur.value &gt; min &amp;&amp; cur.value &lt; max &amp;&amp; isBinarySearchTree(cur.left, min, cur.value) &amp;&amp; isBinarySearchTree(cur.right, cur.value, max)</b>
+<b class="fc"><i>25</i>&nbsp;    isBinarySearchTree(root, Int.MinValue - 1L , Int.MaxValue + 1L)</b>
+<i>26</i>&nbsp;  }
+<b class="fc"><i>27</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

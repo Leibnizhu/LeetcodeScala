@@ -1,0 +1,118 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: JudgeAnagram</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.string</a> ]
+</div>
+
+<h1>Coverage Summary for Class: JudgeAnagram (leetcode.primary.string)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">JudgeAnagram$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/ 9)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/ 9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.string
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/35/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。
+<i>7</i>&nbsp;  * 说明: 你可以假设字符串只包含小写字母。
+<i>8</i>&nbsp;  * 进阶: 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+<i>9</i>&nbsp;  */
+<b class="fc"><i>10</i>&nbsp;object JudgeAnagram {</b>
+<i>11</i>&nbsp;  def isAnagram(s: String, t: String): Boolean = {
+<b class="fc"><i>12</i>&nbsp;    if (s.length != t.length) {</b>
+<b class="fc"><i>13</i>&nbsp;      false</b>
+<i>14</i>&nbsp;    } else {
+<i>15</i>&nbsp;      /**
+<i>16</i>&nbsp;        * 与找字符串第一个唯一字符类似,我们用26长度的数组替代哈希表
+<i>17</i>&nbsp;        */
+<b class="fc"><i>18</i>&nbsp;      val counter = new Array[Int](26)</b>
+<i>19</i>&nbsp;      //遍历s所有字符, 在counter中对应加一,t的对应字符减一
+<b class="fc"><i>20</i>&nbsp;      for (i &lt;- 0 until s.length) {</b>
+<b class="fc"><i>21</i>&nbsp;        counter(s.charAt(i) - &#39;a&#39;) += 1</b>
+<b class="fc"><i>22</i>&nbsp;        counter(t.charAt(i) - &#39;a&#39;) -= 1</b>
+<i>23</i>&nbsp;      }
+<i>24</i>&nbsp;      //如果counter全为1则为字母异位词
+<b class="fc"><i>25</i>&nbsp;      (true/:counter)(_ &amp;&amp; _ == 0)</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;  }
+<b class="fc"><i>28</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

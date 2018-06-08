@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: FindFirstUniqueChar</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.string</a> ]
+</div>
+
+<h1>Coverage Summary for Class: FindFirstUniqueChar (leetcode.primary.string)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">FindFirstUniqueChar$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.string
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/34/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
+<i>7</i>&nbsp;  * 注意事项：您可以假定该字符串只包含小写字母。
+<i>8</i>&nbsp;  */
+<b class="fc"><i>9</i>&nbsp;object FindFirstUniqueChar {</b>
+<b class="fc"><i>10</i>&nbsp;  def firstUniqChar(s: String): Int = {</b>
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;      * 字母自身构成索引,不需要用到Hash,直接用字符-&#39;a&#39;即可
+<i>13</i>&nbsp;      */
+<b class="fc"><i>14</i>&nbsp;    val counter = new Array[Int](26)</b>
+<b class="fc"><i>15</i>&nbsp;    val chars = s.toCharArray</b>
+<i>16</i>&nbsp;    //遍历所有字符, 在counter中对应加一
+<b class="fc"><i>17</i>&nbsp;    for (i &lt;- 0 until chars.length)</b>
+<b class="fc"><i>18</i>&nbsp;      counter(chars(i) - &#39;a&#39;) += 1</b>
+<b class="fc"><i>19</i>&nbsp;    for (i &lt;- 0 until chars.length)</b>
+<b class="fc"><i>20</i>&nbsp;      if (counter(chars(i) - &#39;a&#39;) == 1)</b>
+<b class="fc"><i>21</i>&nbsp;        return i</b>
+<b class="fc"><i>22</i>&nbsp;    -1</b>
+<i>23</i>&nbsp;  }
+<b class="fc"><i>24</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

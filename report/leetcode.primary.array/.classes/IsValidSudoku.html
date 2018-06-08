@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: IsValidSudoku</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.array</a> ]
+</div>
+
+<h1>Coverage Summary for Class: IsValidSudoku (leetcode.primary.array)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">IsValidSudoku$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/ 19)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/ 19)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.array
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/23/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
+<i>7</i>&nbsp;  * 数字 1-9 在每一行只能出现一次。
+<i>8</i>&nbsp;  * 数字 1-9 在每一列只能出现一次。
+<i>9</i>&nbsp;  * 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
+<i>10</i>&nbsp;  */
+<b class="fc"><i>11</i>&nbsp;object IsValidSudoku {</b>
+<i>12</i>&nbsp;  /**
+<i>13</i>&nbsp;    * 按照规则来就行
+<i>14</i>&nbsp;    */
+<i>15</i>&nbsp;  def isValidSudoku(board: Array[Array[Char]]): Boolean = {
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;      * 判断某个字符是否合法
+<i>18</i>&nbsp;      *
+<i>19</i>&nbsp;      * @param ch   当前字符
+<i>20</i>&nbsp;      * @param used 保存那些数字已被使用
+<i>21</i>&nbsp;      */
+<i>22</i>&nbsp;    def checkOne(ch: Char, used: Array[Boolean]): Boolean =
+<b class="fc"><i>23</i>&nbsp;      if (ch == &#39;.&#39;) true else if (used(ch - &#39;1&#39;)) false else {</b>
+<b class="fc"><i>24</i>&nbsp;        used(ch - &#39;1&#39;) = true</b>
+<b class="fc"><i>25</i>&nbsp;        true</b>
+<i>26</i>&nbsp;      }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    /**
+<i>29</i>&nbsp;      * 判断9个字符是否合法
+<i>30</i>&nbsp;      *
+<i>31</i>&nbsp;      * @param chs 9个字符,可能是一行一列或一个3x3方块
+<i>32</i>&nbsp;      */
+<i>33</i>&nbsp;    def checkNine(chs: Array[Char]): Boolean = {
+<b class="fc"><i>34</i>&nbsp;      val used: Array[Boolean] = Array.fill(9)(false)</b>
+<b class="fc"><i>35</i>&nbsp;      (true /: chs) ((res, ch) =&gt; checkOne(ch, used) &amp;&amp; res)</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    //检查行
+<b class="fc"><i>39</i>&nbsp;    val lineCheck = (true /: board) ((res, line) =&gt; checkNine(line) &amp;&amp; res)</b>
+<i>40</i>&nbsp;    //检查列
+<b class="fc"><i>41</i>&nbsp;    var columnCheck = true</b>
+<b class="fc"><i>42</i>&nbsp;    for (i &lt;- 0 until 9) {</b>
+<b class="fc"><i>43</i>&nbsp;      columnCheck &amp;= checkNine((for {j &lt;- 0 until 9} yield board(j)(i)).toArray)</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;    //检查3x3
+<b class="fc"><i>46</i>&nbsp;    var boxCheck = true</b>
+<b class="fc"><i>47</i>&nbsp;    for (i &lt;- 0 until 3) {</b>
+<b class="fc"><i>48</i>&nbsp;      for (j &lt;- 0 until 3) {</b>
+<i>49</i>&nbsp;        //构造方块并检查
+<b class="fc"><i>50</i>&nbsp;        boxCheck &amp;= checkNine((for {</b>
+<b class="fc"><i>51</i>&nbsp;          m &lt;- i * 3 until (i + 1) * 3</b>
+<b class="fc"><i>52</i>&nbsp;          n &lt;- j * 3 until (j + 1) * 3</b>
+<b class="fc"><i>53</i>&nbsp;        } yield board(m)(n)).toArray)</b>
+<i>54</i>&nbsp;      }
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<b class="fc"><i>57</i>&nbsp;    lineCheck &amp;&amp; columnCheck &amp;&amp; boxCheck</b>
+<i>58</i>&nbsp;  }
+<b class="fc"><i>59</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

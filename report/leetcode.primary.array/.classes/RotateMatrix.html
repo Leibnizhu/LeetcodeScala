@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RotateMatrix</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.array</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RotateMatrix (leetcode.primary.array)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">RotateMatrix$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.array
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/31/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个 n × n 的二维矩阵表示一个图像。
+<i>7</i>&nbsp;  * 将图像顺时针旋转 90 度。
+<i>8</i>&nbsp;  * 说明：你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。
+<i>9</i>&nbsp;  */
+<b class="fc"><i>10</i>&nbsp;object RotateMatrix {</b>
+<i>11</i>&nbsp;  def rotate(matrix: Array[Array[Int]]): Unit = {
+<i>12</i>&nbsp;    def swap(matrix: Array[Array[Int]])(i: Int, j: Int)(m: Int, n: Int): Unit = {
+<b class="fc"><i>13</i>&nbsp;      val tmp = matrix(i)(j)</b>
+<b class="fc"><i>14</i>&nbsp;      matrix(i)(j) = matrix(m)(n)</b>
+<b class="fc"><i>15</i>&nbsp;      matrix(m)(n) = tmp</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    val n = matrix.length</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;      * 顺时针旋转90度,其实就是正对角线镜像再垂直线镜像
+<i>22</i>&nbsp;      * 1 2   =&gt;  1 3  =&gt; 3 1
+<i>23</i>&nbsp;      * 3 4       2 4     4 2
+<i>24</i>&nbsp;      */
+<i>25</i>&nbsp;    //1.正对角线镜像
+<i>26</i>&nbsp;    for {
+<b class="fc"><i>27</i>&nbsp;      i &lt;- 0 until n</b>
+<b class="fc"><i>28</i>&nbsp;      j &lt;- i until n</b>
+<b class="fc"><i>29</i>&nbsp;    } yield swap(matrix)(i,j)(j,i)</b>
+<i>30</i>&nbsp;//    matrix.foreach(l =&gt; println(l.toList))
+<i>31</i>&nbsp;    //2. 垂直线镜像
+<i>32</i>&nbsp;    for{
+<b class="fc"><i>33</i>&nbsp;      i &lt;- 0 until n</b>
+<b class="fc"><i>34</i>&nbsp;      j &lt;- 0 until n/2</b>
+<b class="fc"><i>35</i>&nbsp;    } yield swap(matrix)(i,j)(i, n-1-j)</b>
+<i>36</i>&nbsp;//    matrix.foreach(l =&gt; println(l.toList))
+<i>37</i>&nbsp;  }
+<b class="fc"><i>38</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TreeNode</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.tree</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TreeNode (leetcode.primary.tree)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TreeNode</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TreeNode$</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    67.7%
+  </span>
+  <span class="absValue">
+    (21/ 31)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.8%
+  </span>
+  <span class="absValue">
+    (22/ 32)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.tree
+<i>2</i>&nbsp;
+<b class="fc"><i>3</i>&nbsp;case class TreeNode (value: Int, var left: TreeNode = null, var right: TreeNode = null)</b>
+<i>4</i>&nbsp;
+<b class="fc"><i>5</i>&nbsp;object TreeNode {</b>
+<i>6</i>&nbsp;  /**
+<i>7</i>&nbsp;    * 根据传入参数构造数
+<i>8</i>&nbsp;    *
+<i>9</i>&nbsp;    * @param arr 节点数组,null为没有节点,自树根开始按层排列下来(按完全二叉树,没有的补上null)
+<i>10</i>&nbsp;    * @return 树根
+<i>11</i>&nbsp;    */
+<i>12</i>&nbsp;  def apply(arr: Array[Integer]): TreeNode = {
+<b class="fc"><i>13</i>&nbsp;    if (arr == null || arr.length == 0) {</b>
+<b class="fc"><i>14</i>&nbsp;      null</b>
+<i>15</i>&nbsp;    } else {
+<b class="fc"><i>16</i>&nbsp;      val len = arr.length</b>
+<b class="fc"><i>17</i>&nbsp;      val nodes = arr.map {</b>
+<b class="fc"><i>18</i>&nbsp;        case value: Integer =&gt; TreeNode(value)</b>
+<b class="fc"><i>19</i>&nbsp;        case _ =&gt; null</b>
+<i>20</i>&nbsp;      }
+<i>21</i>&nbsp;      /**
+<i>22</i>&nbsp;        * 给出的数组是按完全二叉树的顺序来的,因此左节点=2i+1,右节点=2(i+1)
+<i>23</i>&nbsp;        */
+<b class="fc"><i>24</i>&nbsp;      nodes.zipWithIndex.foreach { case (node, index) =&gt;</b>
+<b class="fc"><i>25</i>&nbsp;        if (index * 2 + 1 &lt; len &amp;&amp; node != null) node.left = nodes(index * 2 + 1)</b>
+<b class="fc"><i>26</i>&nbsp;        if (index * 2 + 2 &lt; len &amp;&amp; node != null) node.right = nodes(index * 2 + 2)</b>
+<i>27</i>&nbsp;      }
+<b class="fc"><i>28</i>&nbsp;      nodes.head</b>
+<b class="fc"><i>29</i>&nbsp;    }</b>
+<i>30</i>&nbsp;  }
+<b class="nc"><i>31</i>&nbsp;</b>
+<i>32</i>&nbsp;  /**
+<i>33</i>&nbsp;    * 判断高度平衡二叉树
+<i>34</i>&nbsp;    * 一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
+<i>35</i>&nbsp;    *
+<i>36</i>&nbsp;    * 当前节点两个子树高度相差不超过1,且两个子树都是高度平衡二叉树(递归)
+<i>37</i>&nbsp;    */
+<i>38</i>&nbsp;  def isHighlyBalancedTree(root: TreeNode): Boolean = {
+<b class="fc"><i>39</i>&nbsp;    if(root == null) true else</b>
+<b class="fc"><i>40</i>&nbsp;    Math.abs(MaxDepth.maxDepth(root.left) - MaxDepth.maxDepth(root.right)) &lt;= 1 &amp;&amp;</b>
+<b class="fc"><i>41</i>&nbsp;      isHighlyBalancedTree(root.left) &amp;&amp; isHighlyBalancedTree(root.right)</b>
+<b class="fc"><i>42</i>&nbsp;  }</b>
+<b class="fc"><i>43</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RemoveDuplicatesFromSortedArray</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.array</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RemoveDuplicatesFromSortedArray (leetcode.primary.array)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">RemoveDuplicatesFromSortedArray$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/ 9)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/ 9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.array
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/21/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+<i>7</i>&nbsp;  * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+<i>8</i>&nbsp;  */
+<b class="fc"><i>9</i>&nbsp;object RemoveDuplicatesFromSortedArray {</b>
+<i>10</i>&nbsp;  def removeDuplicates(nums: Array[Int]): Int = {
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;      * 遍历, len保存着当前找到的不重复的个数, 找到新的数放到前面
+<i>13</i>&nbsp;      *
+<i>14</i>&nbsp;      * @param ar 数组
+<i>15</i>&nbsp;      * @param len 当前不重复的长度
+<i>16</i>&nbsp;      * @param i 游标
+<i>17</i>&nbsp;      * @return 不重复的长度
+<i>18</i>&nbsp;      */
+<i>19</i>&nbsp;    def distinct(ar: Array[Int], len: Int, i: Int): Int =
+<b class="fc"><i>20</i>&nbsp;      if (i &gt; ar.length - 1)</b>
+<b class="fc"><i>21</i>&nbsp;        len</b>
+<i>22</i>&nbsp;      else
+<b class="fc"><i>23</i>&nbsp;        distinct(ar, if (ar(i) != ar(len - 1)) {</b>
+<b class="fc"><i>24</i>&nbsp;          ar(len) = ar(i)</b>
+<b class="fc"><i>25</i>&nbsp;          len + 1</b>
+<b class="fc"><i>26</i>&nbsp;        } else len, i + 1)</b>
+<i>27</i>&nbsp;
+<b class="fc"><i>28</i>&nbsp;    if (nums == null || nums.length == 0) 0 else distinct(nums, 1, 1)</b>
+<i>29</i>&nbsp;  }
+<b class="fc"><i>30</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

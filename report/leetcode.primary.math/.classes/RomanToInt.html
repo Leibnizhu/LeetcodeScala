@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RomanToInt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.math</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RomanToInt (leetcode.primary.math)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">RomanToInt$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/ 19)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/ 19)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.math
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/25/math/63/
+<i>5</i>&nbsp;  * 罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。
+<i>6</i>&nbsp;  *
+<i>7</i>&nbsp;  * 字符          数值
+<i>8</i>&nbsp;  * I             1
+<i>9</i>&nbsp;  * V             5
+<i>10</i>&nbsp;  * X             10
+<i>11</i>&nbsp;  * L             50
+<i>12</i>&nbsp;  * C             100
+<i>13</i>&nbsp;  * D             500
+<i>14</i>&nbsp;  * M             1000
+<i>15</i>&nbsp;  * 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
+<i>16</i>&nbsp;  *
+<i>17</i>&nbsp;  * 通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+<i>18</i>&nbsp;  *
+<i>19</i>&nbsp;  * I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+<i>20</i>&nbsp;  * X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。
+<i>21</i>&nbsp;  * C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+<i>22</i>&nbsp;  * 给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
+<i>23</i>&nbsp;  */
+<b class="fc"><i>24</i>&nbsp;object RomanToInt {</b>
+<i>25</i>&nbsp;  /**
+<i>26</i>&nbsp;    * 主要问题在于IV 这种要后面减去前面的数的
+<i>27</i>&nbsp;    * 因此比较前面的数字,如果发现后面的数比前面的大,要减去
+<i>28</i>&nbsp;    */
+<i>29</i>&nbsp;  def romanToInt(s: String): Int = {
+<b class="fc"><i>30</i>&nbsp;    var result = 0</b>
+<b class="fc"><i>31</i>&nbsp;    val nums = s.toCharArray.map(singleRomanMap)</b>
+<b class="fc"><i>32</i>&nbsp;    for (i &lt;- 0 until s.length) {</b>
+<b class="fc"><i>33</i>&nbsp;      val cur = nums(i) //当前</b>
+<b class="fc"><i>34</i>&nbsp;      if (i &gt; 0 &amp;&amp; cur &gt; nums(i - 1))</b>
+<b class="fc"><i>35</i>&nbsp;        result += (cur - 2 * nums(i - 1)) //减两次,第一次是之前多加的一次,第二次是正确要减的一次</b>
+<i>36</i>&nbsp;      else
+<b class="fc"><i>37</i>&nbsp;        result += cur</b>
+<i>38</i>&nbsp;    }
+<b class="fc"><i>39</i>&nbsp;    result</b>
+<i>40</i>&nbsp;  }
+<i>41</i>&nbsp;
+<b class="fc"><i>42</i>&nbsp;  private def singleRomanMap: Char =&gt; Int = {</b>
+<b class="fc"><i>43</i>&nbsp;    case &#39;I&#39; =&gt; 1</b>
+<b class="fc"><i>44</i>&nbsp;    case &#39;V&#39; =&gt; 5</b>
+<b class="fc"><i>45</i>&nbsp;    case &#39;X&#39; =&gt; 10</b>
+<b class="fc"><i>46</i>&nbsp;    case &#39;L&#39; =&gt; 50</b>
+<b class="fc"><i>47</i>&nbsp;    case &#39;C&#39; =&gt; 100</b>
+<b class="fc"><i>48</i>&nbsp;    case &#39;D&#39; =&gt; 500</b>
+<b class="fc"><i>49</i>&nbsp;    case &#39;M&#39; =&gt; 1000</b>
+<b class="fc"><i>50</i>&nbsp;    case _ =&gt; 0</b>
+<i>51</i>&nbsp;  }
+<b class="fc"><i>52</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

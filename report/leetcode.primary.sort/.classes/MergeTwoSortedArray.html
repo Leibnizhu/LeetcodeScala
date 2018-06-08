@@ -1,0 +1,135 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MergeTwoSortedArray</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.sort</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MergeTwoSortedArray (leetcode.primary.sort)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">MergeTwoSortedArray$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.sort
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/8/sorting-and-searching/52/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+<i>7</i>&nbsp;  * 说明:
+<i>8</i>&nbsp;  * 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+<i>9</i>&nbsp;  * 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+<i>10</i>&nbsp;  */
+<b class="fc"><i>11</i>&nbsp;object MergeTwoSortedArray {</b>
+<i>12</i>&nbsp;  /**
+<i>13</i>&nbsp;    * 合并两个排序数组
+<i>14</i>&nbsp;    *
+<i>15</i>&nbsp;    * @param nums1 第一个数组 m以后的都是0,空间足够
+<i>16</i>&nbsp;    * @param m     第一个数组的长度
+<i>17</i>&nbsp;    * @param nums2 第二个数组
+<i>18</i>&nbsp;    * @param n     第二个数组的长度
+<i>19</i>&nbsp;    */
+<i>20</i>&nbsp;  def merge(nums1: Array[Int], m: Int, nums2: Array[Int], n: Int): Unit = {
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;      * 考虑到使用的空间足够小O(1),可以直接在nums1上面进行复制
+<i>23</i>&nbsp;      * 这样为了避免前面的数被覆盖,应该从后面开始复制
+<i>24</i>&nbsp;      */
+<b class="fc"><i>25</i>&nbsp;    var p1 = m - 1</b>
+<b class="fc"><i>26</i>&nbsp;    var p2 = n - 1</b>
+<b class="fc"><i>27</i>&nbsp;    var pRes = m + n - 1</b>
+<b class="fc"><i>28</i>&nbsp;    while (p1 &gt;= 0 &amp;&amp; p2 &gt;= 0) {</b>
+<b class="fc"><i>29</i>&nbsp;      nums1(pRes) = if (nums1(p1) &gt;= nums2(p2)) {</b>
+<b class="fc"><i>30</i>&nbsp;        p1 -= 1</b>
+<b class="fc"><i>31</i>&nbsp;        nums1(p1 + 1)</b>
+<i>32</i>&nbsp;      } else {
+<b class="fc"><i>33</i>&nbsp;        p2 -= 1</b>
+<b class="fc"><i>34</i>&nbsp;        nums2(p2 + 1)</b>
+<i>35</i>&nbsp;      }
+<b class="fc"><i>36</i>&nbsp;      pRes -= 1</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;    //num1的游标可以不管,因为旧的数据已经在上面,无需复制了
+<b class="fc"><i>39</i>&nbsp;    while (p2 &gt;= 0) {</b>
+<b class="fc"><i>40</i>&nbsp;      nums1(pRes) = nums2(p2)</b>
+<b class="fc"><i>41</i>&nbsp;      pRes -= 1</b>
+<b class="fc"><i>42</i>&nbsp;      p2 -= 1</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;  }
+<b class="fc"><i>45</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

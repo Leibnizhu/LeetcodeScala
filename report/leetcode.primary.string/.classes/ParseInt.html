@@ -1,0 +1,147 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ParseInt</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.string</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ParseInt (leetcode.primary.string)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">ParseInt$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (27/ 27)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (27/ 27)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.string
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/37/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 实现 atoi，将字符串转为整数。
+<i>7</i>&nbsp;  * 在找到第一个非空字符之前，需要移除掉字符串中的空格字符。
+<i>8</i>&nbsp;  * 如果第一个非空字符是正号或负号，选取该符号，并将其与后面尽可能多的连续的数字组合起来，这部分字符即为整数的值。
+<i>9</i>&nbsp;  * 如果第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+<i>10</i>&nbsp;  * 字符串可以在形成整数的字符后面包括多余的字符，这些字符可以被忽略，它们对于函数没有影响。
+<i>11</i>&nbsp;  * 当字符串中的第一个非空字符序列不是个有效的整数；或字符串为空；或字符串仅包含空白字符时，则不进行转换。
+<i>12</i>&nbsp;  * 若函数不能执行有效的转换，返回 0。
+<i>13</i>&nbsp;  * 说明：假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。
+<i>14</i>&nbsp;  * 如果数值超过可表示的范围，则返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。
+<i>15</i>&nbsp;  */
+<b class="fc"><i>16</i>&nbsp;object ParseInt {</b>
+<i>17</i>&nbsp;  def myAtoi(str: String): Int = {
+<b class="fc"><i>18</i>&nbsp;    val chars = str.toCharArray</b>
+<b class="fc"><i>19</i>&nbsp;    val len = chars.length</b>
+<b class="fc"><i>20</i>&nbsp;    if (len == 0) {</b>
+<i>21</i>&nbsp;      //空字符串,返回0
+<b class="fc"><i>22</i>&nbsp;      0</b>
+<i>23</i>&nbsp;    } else {
+<b class="fc"><i>24</i>&nbsp;      var i = 0</b>
+<i>25</i>&nbsp;      //跳过字符串前面的空格
+<b class="fc"><i>26</i>&nbsp;      while (i &lt; len &amp;&amp; chars(i) == &#39; &#39;) i += 1</b>
+<b class="fc"><i>27</i>&nbsp;      if(i &gt;= len) return 0</b>
+<i>28</i>&nbsp;      //符号判断
+<b class="fc"><i>29</i>&nbsp;      val neg = chars(i) == &#39;-&#39;</b>
+<b class="fc"><i>30</i>&nbsp;      if (chars(i) == &#39;+&#39; || chars(i) == &#39;-&#39;) i+=1</b>
+<i>31</i>&nbsp;      //数字解析
+<b class="fc"><i>32</i>&nbsp;      if ( i &lt; len &amp;&amp; chars(i) &gt;= &#39;0&#39; &amp;&amp; chars(i) &lt;= &#39;9&#39;) {</b>
+<b class="fc"><i>33</i>&nbsp;        var abs = 0</b>
+<b class="fc"><i>34</i>&nbsp;        val maxHead = Integer.MAX_VALUE/10</b>
+<b class="fc"><i>35</i>&nbsp;        val maxLast = Integer.MAX_VALUE%10</b>
+<b class="fc"><i>36</i>&nbsp;        val minHead = Math.abs(Integer.MIN_VALUE/10)</b>
+<b class="fc"><i>37</i>&nbsp;        val minLast = Math.abs(Integer.MIN_VALUE%10)</b>
+<b class="fc"><i>38</i>&nbsp;        while( i &lt; len &amp;&amp; chars(i) &gt;= &#39;0&#39; &amp;&amp; chars(i) &lt;= &#39;9&#39;){</b>
+<b class="fc"><i>39</i>&nbsp;          val cur = chars(i) - &#39;0&#39;</b>
+<i>40</i>&nbsp;          //处理最大值
+<b class="fc"><i>41</i>&nbsp;          if(!neg &amp;&amp; (abs &gt; maxHead || (abs == maxHead &amp;&amp; cur &gt;= maxLast)))</b>
+<b class="fc"><i>42</i>&nbsp;            return Integer.MAX_VALUE</b>
+<i>43</i>&nbsp;          //处理最小值
+<b class="fc"><i>44</i>&nbsp;          if(neg &amp;&amp; (abs &gt; minHead || (abs == minHead &amp;&amp; cur &gt;= minLast)))</b>
+<b class="fc"><i>45</i>&nbsp;            return Integer.MIN_VALUE</b>
+<i>46</i>&nbsp;          //正常情况
+<b class="fc"><i>47</i>&nbsp;          abs =  abs * 10 + cur</b>
+<b class="fc"><i>48</i>&nbsp;          i += 1</b>
+<i>49</i>&nbsp;        }
+<b class="fc"><i>50</i>&nbsp;        if(neg) -abs else abs</b>
+<i>51</i>&nbsp;      } else {
+<i>52</i>&nbsp;        //非法字符,返回0
+<b class="fc"><i>53</i>&nbsp;        0</b>
+<i>54</i>&nbsp;      }
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;  }
+<b class="fc"><i>57</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

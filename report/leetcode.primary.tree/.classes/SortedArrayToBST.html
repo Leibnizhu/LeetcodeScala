@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SortedArrayToBST</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.tree</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SortedArrayToBST (leetcode.primary.tree)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">SortedArrayToBST$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.tree
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/7/trees/51/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
+<i>7</i>&nbsp;  * 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
+<i>8</i>&nbsp;  */
+<b class="fc"><i>9</i>&nbsp;object SortedArrayToBST {</b>
+<i>10</i>&nbsp;  def sortedArrayToBST(nums: Array[Int]): TreeNode = {
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;      * 数组已经排序,那么可以直接处理了
+<i>13</i>&nbsp;      * 每次取中间的数作为当前子树的树根的值
+<i>14</i>&nbsp;      * 然后分别调用两边的子数组,作为左右子树
+<i>15</i>&nbsp;      * 再把左右子树的树根设为当前节点的左右叶子
+<i>16</i>&nbsp;      * 最后返回当前节点,即当前子树的树根
+<i>17</i>&nbsp;      *
+<i>18</i>&nbsp;      * @param values 取值的数组
+<i>19</i>&nbsp;      * @param left   要处理的数组左下标
+<i>20</i>&nbsp;      * @param right  要处理的数组右下标
+<i>21</i>&nbsp;      * @return
+<i>22</i>&nbsp;      */
+<i>23</i>&nbsp;    def toBST(values: Array[Int], left: Int, right: Int): TreeNode = {
+<b class="fc"><i>24</i>&nbsp;      val len = right - left</b>
+<b class="fc"><i>25</i>&nbsp;      if (len &lt; 1)</b>
+<b class="fc"><i>26</i>&nbsp;        null</b>
+<i>27</i>&nbsp;      else {
+<i>28</i>&nbsp;        //长度奇数的时候,拿到正中间的数,偶数时,拿到中间偏右的值
+<i>29</i>&nbsp;        // (注意是偏右,如果一直偏左,可能在最后漏掉数)
+<b class="fc"><i>30</i>&nbsp;        val middle = (left + right) / 2</b>
+<b class="fc"><i>31</i>&nbsp;        val cur = TreeNode(values(middle))</b>
+<b class="fc"><i>32</i>&nbsp;        cur.left = toBST(values, left, middle)</b>
+<b class="fc"><i>33</i>&nbsp;        cur.right = toBST(values, middle + 1, right)</b>
+<b class="fc"><i>34</i>&nbsp;        cur</b>
+<i>35</i>&nbsp;      }
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<b class="fc"><i>38</i>&nbsp;    toBST(nums, 0, nums.length)</b>
+<i>39</i>&nbsp;  }
+<b class="fc"><i>40</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MaxSubArray</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.dynamic</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MaxSubArray (leetcode.primary.dynamic)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">MaxSubArray$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/ 8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/ 8)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.dynamic
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/23/dynamic-programming/56/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+<i>7</i>&nbsp;  * 进阶: 如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+<i>8</i>&nbsp;  */
+<b class="fc"><i>9</i>&nbsp;object MaxSubArray {</b>
+<i>10</i>&nbsp;  /**
+<i>11</i>&nbsp;    * 考虑每一个元素,要生成最大的子串,要么加入前面的子串,要么自己新开一个
+<i>12</i>&nbsp;    * 前面的子串如果总和小于0,那么没必要加了,加了之后比自己单独开子串肯定要小
+<i>13</i>&nbsp;    * 因此动态规划可以用两个变量,分别保存总的最大子串和,以及前面子串和
+<i>14</i>&nbsp;    * 遍历的时候,如果前面子串和小于0,那么单独开开串,前子串和为当前值
+<i>15</i>&nbsp;    *          否则,加入前子串,前子串和加上当前值;
+<i>16</i>&nbsp;    *          实际上操作的时候,不关系加不加入前子串,我们只要维护当前子串和即可,
+<i>17</i>&nbsp;    *          即 前子串和&#39;=max(当前值,当前值+前子串和),前子串和小于0 则新子串只包含当前值
+<i>18</i>&nbsp;    * 同时维护全局最大子串和(因为新开子串可能错过了前面的最大子串和了,要保存起来)
+<i>19</i>&nbsp;    */
+<i>20</i>&nbsp;  def maxSubArray(nums: Array[Int]): Int = {
+<b class="fc"><i>21</i>&nbsp;    var totalMax = Int.MinValue</b>
+<b class="fc"><i>22</i>&nbsp;    var curMax = 0</b>
+<b class="fc"><i>23</i>&nbsp;    nums.foreach(num =&gt; {</b>
+<b class="fc"><i>24</i>&nbsp;      curMax = Math.max(num, num+curMax)</b>
+<b class="fc"><i>25</i>&nbsp;      totalMax = Math.max(totalMax, curMax)</b>
+<i>26</i>&nbsp;//      println(s&quot;$num\t$curMax\t$totalMax&quot;)
+<i>27</i>&nbsp;    })
+<b class="fc"><i>28</i>&nbsp;    totalMax</b>
+<i>29</i>&nbsp;  }
+<b class="fc"><i>30</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

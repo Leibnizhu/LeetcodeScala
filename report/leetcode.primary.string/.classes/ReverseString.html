@@ -1,0 +1,116 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ReverseString</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.string</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ReverseString (leetcode.primary.string)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">ReverseString$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.string
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/32/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 请编写一个函数，其功能是将输入的字符串反转过来。
+<i>7</i>&nbsp;  */
+<b class="fc"><i>8</i>&nbsp;object ReverseString {</b>
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;  def reverseString(s: String): String = {
+<i>11</i>&nbsp;    /**
+<i>12</i>&nbsp;      * 用scala自带的String.reverse会报超时,直接用遍历写一个
+<i>13</i>&nbsp;      */
+<b class="fc"><i>14</i>&nbsp;    if (s == null || s.length() == 0) {</b>
+<b class="fc"><i>15</i>&nbsp;      s</b>
+<i>16</i>&nbsp;    } else {
+<b class="fc"><i>17</i>&nbsp;      val chars = s.toCharArray</b>
+<b class="fc"><i>18</i>&nbsp;      val len = chars.length</b>
+<b class="fc"><i>19</i>&nbsp;      for (i &lt;- 0 until len / 2) {</b>
+<b class="fc"><i>20</i>&nbsp;        chars(i) = s.charAt(len - 1 - i)</b>
+<b class="fc"><i>21</i>&nbsp;        chars(len - 1 - i) = s.charAt(i)</b>
+<i>22</i>&nbsp;      }
+<b class="fc"><i>23</i>&nbsp;      String.copyValueOf(chars)</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;  }
+<b class="fc"><i>26</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>

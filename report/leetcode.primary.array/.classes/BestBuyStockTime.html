@@ -1,0 +1,113 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BestBuyStockTime</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">leetcode.primary.array</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BestBuyStockTime (leetcode.primary.array)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+  <tr>
+    <td class="name">BestBuyStockTime$</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package leetcode.primary.array
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp;  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/22/
+<i>5</i>&nbsp;  *
+<i>6</i>&nbsp;  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+<i>7</i>&nbsp;  * 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+<i>8</i>&nbsp;  * 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+<i>9</i>&nbsp;  */
+<b class="fc"><i>10</i>&nbsp;object BestBuyStockTime {</b>
+<i>11</i>&nbsp;  def maxProfit(prices: Array[Int]): Int = {
+<i>12</i>&nbsp;    /**
+<i>13</i>&nbsp;      * 求每两个价格之间的差值,大于0则有收益,加入收益,否则不买卖
+<i>14</i>&nbsp;      * @param prices 价格曲线
+<i>15</i>&nbsp;      * @param profit 收益
+<i>16</i>&nbsp;      * @param i      游标
+<i>17</i>&nbsp;      */
+<i>18</i>&nbsp;    def process(prices: Array[Int], profit: Int, i: Int): Int =
+<b class="fc"><i>19</i>&nbsp;      if (i &gt;= prices.length) profit else process(prices, profit + Math.max(prices(i) - prices(i - 1), 0), i + 1)</b>
+<i>20</i>&nbsp;
+<b class="fc"><i>21</i>&nbsp;    if (prices == null || prices.length &lt; 2) 0 else process(prices, 0, 1)</b>
+<i>22</i>&nbsp;  }
+<b class="fc"><i>23</i>&nbsp;}</b>
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-06-08 16:10</div>
+</div>
+</body>
+</html>
