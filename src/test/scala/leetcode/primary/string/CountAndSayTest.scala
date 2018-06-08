@@ -34,6 +34,6 @@ class CountAndSayTest extends FunSuite {
 
   private def check(num: Int, shouldBe:String) = {
     val result = CountAndSay.countAndSay(num)
-    assert(result == shouldBe)
+    assert(result.equals(shouldBe))
   }
 }
