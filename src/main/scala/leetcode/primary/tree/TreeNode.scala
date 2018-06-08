@@ -25,10 +25,7 @@ object TreeNode {
         if (index * 2 + 1 < len && node != null) node.left = nodes(index * 2 + 1)
         if (index * 2 + 2 < len && node != null) node.right = nodes(index * 2 + 2)
       }
-      if (nodes.nonEmpty)
-        nodes.head
-      else
-        null
+      nodes.head
     }
   }
 
