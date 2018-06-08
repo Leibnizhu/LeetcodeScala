@@ -16,22 +16,19 @@ object BestBuyStockTime2 {
     * 因此可以用数组把这两个存起来,最小值数组从左边开始算,最大值数组从右边开始算
     */
   def maxProfit(prices: Array[Int]): Int = {
-    val len = prices.length
-    if (len <= 1) {
+    if (prices.length <= 1) {
       0
     } else {
-      val min = new Array[Int](len) //保存从左边开始往右依次的最小值
-      val max = new Array[Int](len) //保存从右边开始往左依次的最大值
-      var curMin = prices(0)
-      for (i <- min.indices) min(i) = {
-        if (prices(i) < curMin) curMin = prices(i)
+      var curMin = prices.head
+      val min = prices.map(price => { //保存从左边开始往右依次的最小值
+        if (price < curMin) curMin = price
         curMin
-      }
-      var curMax = prices(len - 1)
-      for (i <- max.length -1 to 0 by -1) max(i) = {
-        if (prices(i) > curMax) curMax = prices(i)
+      })
+      var curMax = prices.last
+      val max = prices.reverse.map(price => { //保存从右边开始往左依次的最大值
+        if (price > curMax) curMax = price
         curMax
-      }
+      }).reverse
       max.zip(min).map(p => p._1 - p._2).max //两边相减就是收益,取收益最大值返回
     }
   }
