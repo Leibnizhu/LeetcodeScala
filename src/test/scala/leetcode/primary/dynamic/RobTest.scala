@@ -30,4 +30,8 @@ class RobTest extends FunSuite {
   test("1,1") {
     assert(Rob.rob(Array(1,1)) == 1)
   }
+
+  test("3") {
+    assert(Rob.rob(Array(3)) == 3)
+  }
 }

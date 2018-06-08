@@ -43,19 +43,4 @@ object TreeNode {
     Math.abs(MaxDepth.maxDepth(root.left) - MaxDepth.maxDepth(root.right)) <= 1 &&
       isHighlyBalancedTree(root.left) && isHighlyBalancedTree(root.right)
   }
-
-  /**
-    * 常数时间求大于等于cap的最小二次幂
-    */
-  private def min2Power(size: Int): Int = {
-    var n = size - 1
-    n |= n >>> 1
-    n |= n >>> 2
-    n |= n >>> 4
-    n |= n >>> 8
-    n |= n >>> 16
-    if (n < 0) 1
-    else if (n >= (1 << 30)) 1 << 30
-    else n + 1
-  }
 }

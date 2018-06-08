@@ -15,6 +15,10 @@ class IsPalindromeTest extends FunSuite {
     check(Array(1), shouldBe = true)
   }
 
+  test("null") {
+    check(Array(), shouldBe = true)
+  }
+
   test("1->2->3->2->1") {
     check(Array(1,2,3,2,1), shouldBe = true)
   }

@@ -1,6 +1,6 @@
 package leetcode.primary.linkedlist;
 
-import java.util.Objects;
+import leetcode.primary.linkedlist.DeleteNode.ListNode;
 
 /**
  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/6/linked-list/46/
@@ -19,33 +19,5 @@ public class HasCycle {
         }
 //        System.out.println(fast == null ? "null" : fast.x+","+slow.x);
         return fast == slow;
-    }
-
-    public static class ListNode {
-        int x;
-        ListNode next;
-
-        public ListNode(int val, ListNode next) {
-            this(val);
-            this.next = next;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            ListNode listNode = (ListNode) o;
-            return x == listNode.x &&
-                    Objects.equals(next, listNode.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, next);
-        }
-
-        ListNode(int x) {
-            this.x = x;
-        }
     }
 }

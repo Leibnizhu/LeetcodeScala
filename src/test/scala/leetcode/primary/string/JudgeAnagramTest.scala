@@ -16,6 +16,10 @@ class JudgeAnagramTest extends FunSuite {
     check("a", "a",shouldBe = true)
   }
 
+  test("a,ab") {
+    check("a", "ab",shouldBe = false)
+  }
+
   private def check(str1: String, str2:String, shouldBe:Boolean) = {
     val result = JudgeAnagram.isAnagram(str1, str2)
     assert(result == shouldBe)

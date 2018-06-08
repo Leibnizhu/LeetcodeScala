@@ -85,6 +85,10 @@ class ParseIntTest extends FunSuite {
     check(" ",0)
   }
 
+  test("empty") {
+    check("",0)
+  }
+
   private def check(str: String, shouldBe:Int) = {
     val result = ParseInt.myAtoi(str)
     assert(result == shouldBe)

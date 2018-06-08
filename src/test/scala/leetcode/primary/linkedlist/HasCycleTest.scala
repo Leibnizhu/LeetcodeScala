@@ -35,14 +35,14 @@ class HasCycleTest extends FunSuite {
     assert(result == shouldBe)
   }
 
-  private def makeLinkedList(nodes: Array[Int], len: Int, cycle: Boolean): HasCycle.ListNode = {
+  private def makeLinkedList(nodes: Array[Int], len: Int, cycle: Boolean): DeleteNode.ListNode = {
     if (len == 0) {
       null
     } else {
-      val nodeList = new Array[HasCycle.ListNode](len)
-      nodeList(len - 1) = new HasCycle.ListNode(nodes.last, null)
+      val nodeList = new Array[DeleteNode.ListNode](len)
+      nodeList(len - 1) = new DeleteNode.ListNode(nodes.last, null)
       for (i <- len - 2 to 0 by -1) {
-        nodeList(i) = new HasCycle.ListNode(nodes(i), nodeList(i + 1))
+        nodeList(i) = new DeleteNode.ListNode(nodes(i), nodeList(i + 1))
       }
       if (cycle) nodeList(len - 1).next = nodeList(0)
       nodeList(0)

@@ -20,6 +20,10 @@ class JudgePalindromeTest extends FunSuite {
     check("   ",shouldBe = true)
   }
 
+  test("null") {
+    check(null, shouldBe = false)
+  }
+
   private def check(str: String, shouldBe:Boolean) = {
     val result = JudgePalindrome.isPalindrome(str)
     assert(result == shouldBe)
