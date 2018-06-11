@@ -10,6 +10,25 @@ import leetcode.common.ListNode
   */
 object AddTwoNumbers {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
-    null
+    var p1 = l1
+    var p2 = l2
+    var carry = 0 //进位
+    var root: ListNode = null //链表表头
+    var prev: ListNode = null //上一个节点
+    while (p1 != null || p2 != null) { //只要还有一个不为空就继续，减少后面处理的代码
+      val sum = Option(p1).map(_.x).getOrElse(0) + Option(p2).map(_.x).getOrElse(0) + carry
+      carry = sum / 10
+      val cur = ListNode(sum % 10)
+      if (p1 == l1) //第一次处理，需要设置表头，用于返回
+        root = cur
+      else
+        prev.next = cur //设置上个节点的next
+      prev = cur
+      if (p1 != null) p1 = p1.next
+      if (p2 != null) p2 = p2.next
+    }
+    if(carry > 0) //处理最后的进位
+      prev.next =  ListNode(carry)
+    root
   }
 }

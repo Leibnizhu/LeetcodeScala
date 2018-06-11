@@ -5,9 +5,30 @@ import org.scalatest.FunSuite
 
 class AddTwoNumbersTest extends FunSuite {
   test("(2 -> 4 -> 3) + (5 -> 6 -> 4)") {
-    val list1 = ListNode.makeLinkedList(Array(2, 4, 3), 3)
-    val list2 = ListNode.makeLinkedList(Array(5, 6, 4), 3)
+    check(Array(2, 4, 3), Array(5, 6, 4), 3, Array(7, 0, 8))
+  }
+
+  test("(1 -> 2) + (9 -> 7)") {
+    check(Array(1, 2), Array(9, 7), 3, Array(0, 0, 1))
+  }
+
+  test("(1) + (9 -> 9)") {
+    check(Array(1), Array(9, 9), 3, Array(0, 0, 1))
+  }
+
+  test("(9 -> 9) + (1)") {
+    check(Array(9, 9), Array(1), 3, Array(0, 0, 1))
+  }
+
+  test("(0 ) + (0)") {
+    check(Array(0), Array(0), 1, Array(0))
+  }
+
+  def check(arr1: Array[Int], arr2: Array[Int], shouldBeLen: Int, shouldBe: Array[Int]) = {
+    val list1 = ListNode.makeLinkedList(arr1, arr1.length)
+    val list2 = ListNode.makeLinkedList(arr2, arr2.length)
     val result = AddTwoNumbers.addTwoNumbers(list1, list2)
-    assert(ListNode.linkedListToArray(result, 3) sameElements Array(7, 0, 8))
+    println(ListNode.linkedListToArray(result, shouldBeLen).toList)
+    assert(ListNode.linkedListToArray(result, shouldBeLen) sameElements shouldBe)
   }
 }
