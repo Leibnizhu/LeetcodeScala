@@ -1,6 +1,6 @@
 package leetcode.common
 
-case class ListNode(var x: Int, var next: ListNode)
+case class ListNode(var x: Int, var next: ListNode = null)
 object ListNode {
   /**
     * 根据传入参数构造链表
@@ -14,7 +14,7 @@ object ListNode {
       null
     } else {
       val nodeList = new Array[ListNode](len)
-      nodeList(len - 1) = ListNode(nodes.last, null)
+      nodeList(len - 1) = ListNode(nodes.last)
       for (i <- len - 2 to 0 by -1) {
         nodeList(i) = ListNode(nodes(i), nodeList(i + 1))
       }

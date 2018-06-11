@@ -40,7 +40,7 @@ class HasCycleTest extends FunSuite {
       null
     } else {
       val nodeList = new Array[DeleteNode.ListNode](len)
-      nodeList(len - 1) = new DeleteNode.ListNode(nodes.last, null)
+      nodeList(len - 1) = new DeleteNode.ListNode(nodes.last)
       for (i <- len - 2 to 0 by -1) {
         nodeList(i) = new DeleteNode.ListNode(nodes(i), nodeList(i + 1))
       }
