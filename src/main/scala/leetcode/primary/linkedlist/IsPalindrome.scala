@@ -1,5 +1,7 @@
 package leetcode.primary.linkedlist
 
+import leetcode.common.ListNode
+
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/6/linked-list/45/
   *

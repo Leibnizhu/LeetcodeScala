@@ -1,5 +1,7 @@
 package leetcode.primary.tree
 
+import leetcode.common.TreeNode
+
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/7/trees/49/
   *

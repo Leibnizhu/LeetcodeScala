@@ -1,5 +1,7 @@
 package leetcode.primary.tree
 
+import leetcode.common.TreeNode
+
 import scala.collection.mutable.ListBuffer
 
 /**

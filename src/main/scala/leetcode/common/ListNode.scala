@@ -1,4 +1,4 @@
-package leetcode.primary.linkedlist
+package leetcode.common
 
 case class ListNode(var x: Int, var next: ListNode)
 object ListNode {

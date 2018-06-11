@@ -1,5 +1,6 @@
 package leetcode.primary.tree
 
+import leetcode.common.TreeNode
 import org.scalatest.FunSuite
 
 class LevelOrderTraverseTest extends FunSuite{

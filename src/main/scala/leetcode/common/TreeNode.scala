@@ -1,4 +1,6 @@
-package leetcode.primary.tree
+package leetcode.common
+
+import leetcode.primary.tree.MaxDepth
 
 case class TreeNode (value: Int, var left: TreeNode = null, var right: TreeNode = null)
 
