@@ -16,8 +16,9 @@ object LongestPalindrome {
     */
   def longestPalindrome(s: String): String = {
     val len = s.length
+    if(len == 0) return s
     val f = Array.ofDim[Boolean](len, len)
-    var maxLen = 0 //维护最大回文子串长度
+    var maxLen = 1 //维护最大回文子串长度
     var start = 0 //最大回文子串的开始位置
     //为了保证可计算，应该从长度1的字串开始算，逐渐增加，到最后才跑整个串
     for (j <- 0 until len) {
@@ -25,9 +26,9 @@ object LongestPalindrome {
       f(j)(j) = true //基本情况
       for (i <- 0 until j) { //字串开始下标
         f(i)(j) = s.charAt(i) == s.charAt(j) && (j == i + 1 || f(i + 1)(j - 1)) //综合方法注释的两个条件，判断当前子串是否回文
-        if (f(i)(j) && j - 1 + 1 > maxLen) {
+        if (f(i)(j) && j - i + 1 > maxLen) {
           //当前子串为回文的话，判断maxLen是否要更新
-          maxLen = j - 1 + 1
+          maxLen = j - i + 1
           start = i
         }
       }

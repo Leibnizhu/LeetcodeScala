@@ -2,14 +2,29 @@ package leetcode.medium.arraystring
 
 import org.scalatest.FunSuite
 
-class LongestPalindromeTest extends FunSuite{
-    test("babad"){
-      val result = LongestPalindrome.longestPalindrome("babad")
-      assert(result.equals("bab") || result.equals("aba"))
-    }
+class LongestPalindromeTest extends FunSuite {
+  test("babad") {
+    val result = LongestPalindrome.longestPalindrome("babad")
+    assert(result.equals("bab") || result.equals("aba"))
+  }
 
-  test("cbbd"){
+  test("cbbd") {
     val result = LongestPalindrome.longestPalindrome("cbbd")
-    assert(result.equals("bb") || result.equals("bb"))
+    assert(result.equals("bb"))
+  }
+
+  test("eabcb") {
+    val result = LongestPalindrome.longestPalindrome("eabcb")
+    assert(result.equals("bcb"))
+  }
+
+  test("a") {
+    val result = LongestPalindrome.longestPalindrome("a")
+    assert(result.equals("a"))
+  }
+
+  test("empty") {
+    val result = LongestPalindrome.longestPalindrome("")
+    assert(result.equals(""))
   }
 }
