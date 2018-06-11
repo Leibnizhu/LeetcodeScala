@@ -12,6 +12,11 @@ import scala.collection.mutable.ListBuffer
   *  - 不考虑答案输出的顺序。
   */
 object GroupAnagrams {
+  /**
+    * 用HashMap存储
+    * 每个单词内部排序作为key，这样字母异位词的key都相同，在value的里面存储对应的原始单词
+    * 遍历完之后返回即可
+    */
   def groupAnagrams(strs: Array[String]): List[List[String]] = {
     val groups = new mutable.HashMap[String, ListBuffer[String]]()
     for(str <- strs){
