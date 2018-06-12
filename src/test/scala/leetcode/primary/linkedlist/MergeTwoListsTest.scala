@@ -22,12 +22,10 @@ class MergeTwoListsTest extends FunSuite {
   }
 
   private def check(arr1: Array[Int], arr2: Array[Int], shouldBe: Array[Int]): Unit = {
-    val len1 = arr1.length
-    val list1 = ListNode.makeLinkedList(arr1, len1)
-    val len2 = arr2.length
-    val list2 = ListNode.makeLinkedList(arr2, len2)
+    val list1 = ListNode.fromArray(arr1)
+    val list2 = ListNode.fromArray(arr2)
     val newList = MergeTwoLists.mergeTwoLists(list1, list2)
-    val newArr = ListNode.linkedListToArray(newList, len1 + len2)
+    val newArr = ListNode.toArray(newList, arr1.length + arr2.length)
     println(s"merge ${arr1.toList} and ${arr2.toList}. \n\tresult = ${newArr.toList}")
     assert(newArr sameElements shouldBe)
   }

@@ -5,11 +5,11 @@ object ListNode {
   /**
     * 根据传入参数构造链表
     * @param nodes 节点数值的数组
-    * @param len 长度
     * @param cycle 是否首尾相连(环判定用)
     * @return 头节点
     */
-  def makeLinkedList(nodes: Array[Int], len: Int, cycle: Boolean = false): ListNode = {
+  def fromArray(nodes: Array[Int], cycle: Boolean = false): ListNode = {
+    val len = nodes.length
     if (len == 0) {
       null
     } else {
@@ -30,7 +30,7 @@ object ListNode {
     * @param len 长度
     * @return 节点数值的数组
     */
-  def linkedListToArray(newList: ListNode, len: Int): Array[Int] = {
+  def toArray(newList: ListNode, len: Int): Array[Int] = {
     var cur = newList
     val result = new Array[Int](len)
     var i = 0

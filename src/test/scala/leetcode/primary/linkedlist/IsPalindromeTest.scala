@@ -29,8 +29,7 @@ class IsPalindromeTest extends FunSuite {
   }
 
   private def check(arr1: Array[Int], shouldBe: Boolean): Unit = {
-    val len1 = arr1.length
-    val list1 = ListNode.makeLinkedList(arr1, len1)
+    val list1 = ListNode.fromArray(arr1)
     val result = IsPalindrome.isPalindrome(list1)
     assert(result == shouldBe)
   }

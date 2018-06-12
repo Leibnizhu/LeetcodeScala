@@ -14,10 +14,9 @@ class reverseListTest extends FunSuite {
   }
 
   private def check(oldNodes: Array[Int], shouldBe: Array[Int]): Unit = {
-    val len = oldNodes.length
-    val oldList = ListNode.makeLinkedList(oldNodes, len)
+    val oldList = ListNode.fromArray(oldNodes)
     val newList = ReverseList.reverseList(oldList)
-    val newNodes = ListNode.linkedListToArray(newList, len)
+    val newNodes = ListNode.toArray(newList, oldNodes.length)
     assert(newNodes sameElements shouldBe)
   }
 }

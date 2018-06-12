@@ -25,10 +25,10 @@ class AddTwoNumbersTest extends FunSuite {
   }
 
   def check(arr1: Array[Int], arr2: Array[Int], shouldBeLen: Int, shouldBe: Array[Int]) = {
-    val list1 = ListNode.makeLinkedList(arr1, arr1.length)
-    val list2 = ListNode.makeLinkedList(arr2, arr2.length)
+    val list1 = ListNode.fromArray(arr1)
+    val list2 = ListNode.fromArray(arr2)
     val result = AddTwoNumbers.addTwoNumbers(list1, list2)
-    println(ListNode.linkedListToArray(result, shouldBeLen).toList)
-    assert(ListNode.linkedListToArray(result, shouldBeLen) sameElements shouldBe)
+    println(ListNode.toArray(result, shouldBeLen).toList)
+    assert(ListNode.toArray(result, shouldBeLen) sameElements shouldBe)
   }
 }
