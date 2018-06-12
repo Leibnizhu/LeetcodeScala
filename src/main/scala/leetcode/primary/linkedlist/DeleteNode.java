@@ -14,8 +14,8 @@ public class DeleteNode {
     }
 
     public static class ListNode {
-        int val;
-        ListNode next;
+        public int val;
+        public ListNode next;
 
         public ListNode(int val, ListNode next) {
             this(val);
@@ -31,7 +31,7 @@ public class DeleteNode {
                     Objects.equals(next, listNode.next);
         }
 
-        ListNode(int x) {
+        public ListNode(int x) {
             val = x;
         }
     }
