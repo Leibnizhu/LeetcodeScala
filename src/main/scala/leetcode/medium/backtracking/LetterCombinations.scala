@@ -28,7 +28,7 @@ object LetterCombinations {
       */
     def combine(digits:String, n:Int, curCombine:String, result:List[String]):List[String]={
       if(n == digits.length){ //拼接完,返回
-        curCombine :: result
+        result :+ curCombine
       } else {
         val curDict = dict(digits.charAt(n) - '0') //当前按钮对应的可能字母
         var curResult = result
