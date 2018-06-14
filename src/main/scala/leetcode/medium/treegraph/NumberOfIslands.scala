@@ -20,6 +20,8 @@ object NumberOfIslands {
       if (x >= 0 && x < grid.length && y >= 0 && y < grid(0).length
         && grid(x)(y) == '1' && !visited(x)(y)) {
         visited(x)(y) = true
+//        visited.foreach(r=>{r.foreach(p=>print(if (p) "■" else "□")); println()})
+//        println("===============")
         dfs(grid, visited, x - 1, y)
         dfs(grid, visited, x + 1, y)
         dfs(grid, visited, x, y - 1)
