@@ -28,7 +28,6 @@ object SubSet {
         build(n + 1, curSet, tmpRes) //当前数字选择不加入子集
       }
 
-
     if (nums.isEmpty) List() else build(0, List(), List())
   }
 }
