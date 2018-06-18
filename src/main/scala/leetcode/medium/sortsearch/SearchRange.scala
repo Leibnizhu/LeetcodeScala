@@ -19,12 +19,12 @@ object SearchRange {
       * @param f (中间值,目标值)=>是否进入右区间查找
       * @return 最后回合的下标
       */
-    def binarySearch(first: Int, last: Int)(f: (Int, Int) => Boolean): Int = {
-      var l = first
-      var r = last
+    def binarySearch(arr: Array[Int])(f: (Int, Int) => Boolean): Int = {
+      var l = 0
+      var r = arr.length
       while (l != r) {
         val mid = l + (r - l) / 2
-        if (f(nums(mid), target))
+        if (f(arr(mid), target))
           l = mid + 1
         else
           r = mid
@@ -32,8 +32,8 @@ object SearchRange {
       l
     }
 
-    val lower = binarySearch(0, nums.length)(_ < _)
-    val upper = binarySearch(0, nums.length)(_ <= _)
+    val lower = binarySearch(nums)(_ < _)
+    val upper = binarySearch(nums)(_ <= _)
     if (lower == nums.length || nums(lower) != target)
       Array(-1, -1)
     else
