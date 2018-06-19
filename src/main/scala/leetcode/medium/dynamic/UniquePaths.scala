@@ -24,9 +24,7 @@ object UniquePaths {
       x <- 0 until m
       y <- 0 until n
     } yield if (x == 0 && y == 0) f(x)(y) = 1
-    else if (x == 0 && y > 0) f(x)(y) = f(x)(y - 1)
-    else if (x > 0 && y == 0) f(x)(y) = f(x - 1)(y)
-    else f(x)(y) = f(x - 1)(y) + f(x)(y - 1)
+    else f(x)(y) = (if (x > 0) f(x - 1)(y) else 0) + (if (y > 0) f(x)(y - 1) else 0)
     f(m - 1)(n - 1)
   }
 }
