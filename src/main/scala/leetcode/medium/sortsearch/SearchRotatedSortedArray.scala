@@ -22,7 +22,8 @@ object SearchRotatedSortedArray {
     *  - 查找6(大于right,小于left),则应该不存在,直接返回-1
     */
   def search(nums: Array[Int], target: Int): Int = {
-    if (nums == null || nums.isEmpty) return -1
+    if (nums == null || nums.isEmpty)
+      return -1
     var l = 0
     var r = nums.length - 1
     while (l != r) {
