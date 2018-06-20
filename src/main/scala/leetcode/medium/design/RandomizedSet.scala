@@ -18,9 +18,9 @@ class RandomizedSet {
 
   /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
   def insert(`val`: Int): Boolean = {
-    if(set.contains(`val`))
+    if (set.contains(`val`))
       false
-    else{
+    else {
       set += `val`
       true
     }
@@ -28,7 +28,7 @@ class RandomizedSet {
 
   /** Removes a value from the set. Returns true if the set contained the specified element. */
   def remove(`val`: Int): Boolean = {
-    if(!set.contains(`val`))
+    if (!set.contains(`val`))
       false
     else {
       set -= `val`
@@ -38,9 +38,8 @@ class RandomizedSet {
 
   /** Get a random element from the set. */
   def getRandom(): Int = {
-    val step = rand.nextInt(set.size)
     val itr = set.iterator
-    for(i <- 0 until  step) itr.next()
+    for (i <- 0 until rand.nextInt(set.size)) itr.next()
     itr.next()
   }
 }
