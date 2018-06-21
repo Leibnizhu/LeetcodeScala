@@ -1,6 +1,5 @@
-package leetcode.medium.sortsearch
+package leetcode.medium.math
 
-import leetcode.medium.math.HappyNumber
 import org.scalatest.FunSuite
 
 class HappyNumberTest extends FunSuite{
