@@ -6,6 +6,20 @@ package leetcode.medium.dynamic
   * 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
   */
 object CoinChange {
+
+  //打印解法
+  def printSolve(coins: Array[Int], solveMemo: Array[Int],amount:Int): Unit = {
+    var curLeft = amount //还没拿到解的金额
+    var curCoin = solveMemo.last //当前使用的硬币
+    print(amount+"=")
+    while(curLeft > 0){
+      print(curCoin+",") //打印当前使用的硬币(解法)
+      curLeft -= curCoin
+      curCoin = solveMemo(curLeft)
+    }
+    println("")
+  }
+
   /**
     * 典型动态规划.
     * 最直接的想法是,每个amount的最小硬币个数f(x),去找所有可能的组合可能去找最小值,即:
@@ -15,11 +29,20 @@ object CoinChange {
     */
   def coinChange(coins: Array[Int], amount: Int): Int = {
     val memo = Array.fill(amount + 1)(amount + 1) //备忘录,初始化为amount+1这样保证在计算min的时候正确
+    val solveMemo = new Array[Int](amount + 1) //记录解法,当前金额用的面额
     memo(0) = 0
     for {
       i <- 1 to amount //遍历填充备忘录
       j <- coins.indices //遍历硬币可用面额
-    } yield if (coins(j) <= i) memo(i) = Math.min(memo(i), 1 + memo(i - coins(j)))
-    if (memo.last == amount + 1) -1 else memo.last //如果找不到解,那么保持着初始化状态的amount+1,则返回-1
+    } yield if (coins(j) <= i) {
+      if (memo(i) > 1 + memo(i - coins(j))) {
+        memo(i) = 1 + memo(i - coins(j))
+        solveMemo(i) = coins(j)
+      }
+    }
+    if (memo.last == amount + 1) -1 else {
+      printSolve(coins, solveMemo, amount)
+      memo.last
+    } //如果找不到解,那么保持着初始化状态的amount+1,则返回-1
   }
 }

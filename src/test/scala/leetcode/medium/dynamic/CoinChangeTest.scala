@@ -7,6 +7,10 @@ class CoinChangeTest extends FunSuite{
     assert(CoinChange.coinChange(Array(1,2,5), 11) == 3)
   }
 
+  test("[1,2,5], 23"){
+    assert(CoinChange.coinChange(Array(1,2,5), 23) == 6)
+  }
+
   test("[2], 3"){
     assert(CoinChange.coinChange(Array(2), 3) == -1)
   }
