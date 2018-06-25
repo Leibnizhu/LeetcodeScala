@@ -136,3 +136,6 @@ local.properties
 
 target/
 .classpath
+.ensime
+project/build.properties
+.ensime_cache/
