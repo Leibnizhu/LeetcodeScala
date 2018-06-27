@@ -22,4 +22,8 @@ class FirstMissingPositiveTest extends FunSuite {
   test("empty") {
     assert(FirstMissingPositive.firstMissingPositive(Array()) == 1)
   }
+
+  test("1,1") {
+    assert(FirstMissingPositive.firstMissingPositive(Array(1, 1)) == 2)
+  }
 }

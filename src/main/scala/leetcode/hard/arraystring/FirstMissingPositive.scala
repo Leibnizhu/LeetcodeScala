@@ -17,7 +17,7 @@ object FirstMissingPositive {
   def firstMissingPositive(nums: Array[Int]): Int = {
     val n = nums.length
     for (i <- nums.indices)
-      while (nums(i) != i + 1 && nums(i) > 0 && nums(i) <= n) { //交换nums[i]和nums[nums[i]-1]
+      while (nums(i) > 0 && nums(i) <= n && nums(i) != nums(nums(i) - 1)) { //交换nums[i]和nums[nums[i]-1]
         val tmp = nums(i)
         nums(i) = nums(tmp - 1)
         nums(tmp - 1) = tmp
