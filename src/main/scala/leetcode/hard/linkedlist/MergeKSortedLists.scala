@@ -16,19 +16,12 @@ object MergeKSortedLists {
     * =O(2^m*n +2^m*n +...2^m*n) = O(n*k*logk), 比O(n*k^2)小
     */
   def mergeKLists(lists: Array[ListNode]): ListNode = {
-    val k = lists.length
-    if (k == 0) {
-      null
-    } else if (k == 1) {
-      lists(0)
-    } else if (k == 2) {
-      mergeTwoLists(lists(0), lists(1))
-    } else {
-      val mid = k / 2
-      val (left, right) = lists.splitAt(mid)
-      val leftRoot = mergeKLists(left)
-      val rightRoot = mergeKLists(right)
-      mergeTwoLists(leftRoot, rightRoot)
+    lists.length match {
+      case 0 => null
+      case 1 => lists(0)
+      case 2 => mergeTwoLists(lists(0), lists(1))
+      case _ => val mid = lists.length / 2
+        mergeTwoLists(mergeKLists(lists.take(mid)), mergeKLists(lists.drop(mid)))
     }
   }
 
@@ -39,7 +32,10 @@ object MergeKSortedLists {
       l1
     } else {
       //两个表头较小者作为新表头,同时递归调用合并
-      val (newHead, tailHead) = if (l1.x >= l2.x) (l2, mergeTwoLists(l1, l2.next)) else (l1, mergeTwoLists(l1.next, l2))
+      val (newHead, tailHead) = if (l1.x >= l2.x)
+        (l2, mergeTwoLists(l1, l2.next))
+      else
+        (l1, mergeTwoLists(l1.next, l2))
       newHead.next = tailHead
       newHead
     }
