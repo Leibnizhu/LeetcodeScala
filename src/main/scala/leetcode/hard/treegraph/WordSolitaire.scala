@@ -43,6 +43,8 @@ object WordSolitaire {
 
     /**
       * 广度优先搜索
+      * wordList所有元素最多进一次queue(不一定会出,如果提前找到答案了),都会进去visited
+      * 因此时间和空间复杂度都是O(n)
       *
       * @param queue   待处理的State队列
       * @param visited 已处理(包含待处理)的State集合
