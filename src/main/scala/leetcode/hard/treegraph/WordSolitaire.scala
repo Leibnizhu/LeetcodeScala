@@ -18,8 +18,9 @@ object WordSolitaire {
     * 因为要找最短路径,使用广度优先搜索BFS
     */
   def ladderLength(beginWord: String, endWord: String, wordList: List[String]): Int = {
-    case class State(word: String)(val level: Int) //记录状态,level为第几级,方便得到结果
-    val len = beginWord.length //所有单词的长度,统一
+    case class State(word: String)(val level: Int) //记录状态,level为第几级(不参与hash和equals),方便得到结果
+    val len = beginWord.length //所有单词的统一长度
+
     /**
       * 跳过下标skip的字符,从begin下标开始,比较两个字符串是否相等
       */
