@@ -56,11 +56,8 @@ object SurroundedRegions {
       (0 until n).foreach(search(board, m - 1, _)) //最后一行
       (1 to m - 2).foreach(search(board, _, 0)) //第一列
       (1 to m - 2).foreach(search(board, _, n - 1)) //最后一列
-      for {i <- 0 until m; j <- 0 until n} yield board(i)(j) = board(i)(j) match {
-        case 'O' => 'X' //孤岛置为X
-        case RESERVED => 'O' //恢复
-        case _ => 'X'
-      }
+      for {i <- 0 until m; j <- 0 until n} yield //只有要保留的恢复成'O'其他的不管原来是X还是被围的孤岛,都要改成X
+        board(i)(j) = if (board(i)(j) == RESERVED) 'O' else 'X'
     }
   }
 }
