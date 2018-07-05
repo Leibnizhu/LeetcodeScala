@@ -22,14 +22,13 @@ object FriendCircles {
     */
   def findCircleNum(M: Graph): Int = {
     val n = M.length //总人数
-    val visited = Array.fill(n)(false) //已搜索到的人,对应M的下标
+    val visited = new Array[Boolean](n) //已搜索到的人,对应M的下标
     /**
       * 处理队列queue,查找队列里的人所认识的朋友,修改visited记录
       */
     def bfs(m: Graph, queue: List[Int]): Unit = if (queue.nonEmpty) {
-      val curPeople = queue.head
-      visited(curPeople) = true //更新搜索记录
-      bfs(m, queue.tail ++ (0 until n).filter(i => m(curPeople)(i) == 1 && !visited(i))) //队列去头,加上未处理的当前人朋友
+      visited(queue.head) = true //更新搜索记录
+      bfs(m, queue.tail ++ (0 until n).filter(i => m(queue.head)(i) == 1 && !visited(i))) //队列去头,加上未处理的当前人朋友
     }
 
     /**
@@ -38,7 +37,7 @@ object FriendCircles {
     def findCircle(m: Graph, curIndex: Int, circles: Int): Int = curIndex match {
       case `n` => circles
       case i if visited(i) => findCircle(m, i + 1, circles)
-      case _ => bfs(m, List(curIndex)); findCircle(m, curIndex + 1, circles + 1)
+      case i => bfs(m, List(i)); findCircle(m, i + 1, circles + 1)
     }
 
     findCircle(M, 0, 0)
