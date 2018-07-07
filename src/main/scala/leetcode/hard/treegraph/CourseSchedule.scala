@@ -16,7 +16,7 @@ package leetcode.hard.treegraph
   */
 object CourseSchedule {
   /**
-    * 显然是有向图判断是否有环,可以用拓扑排序,Kahn算法
+    * 显然是有向图判断是否有环,可以用拓扑排序,Kahn算法 [to<=from]
     * 缺点是只能判断是否有环,最后留下的不一定只有环,可能包含不在环内的节点,不过对于这一题就够用了
     * 具体的实现用BFS:
     * 1. 找入度=0的节点入栈
@@ -25,16 +25,16 @@ object CourseSchedule {
     */
   def canFinish(numCourses: Int, prerequisites: Array[Array[Int]]): Boolean = {
     val degree = Array.fill(numCourses)(0) //入度,==-1表示已经遍历,删掉
-    prerequisites.foreach(n => degree(n(1)) += 1) //统计入度
-    val edges = prerequisites.groupBy(_(0)).mapValues(_.map(_(1))) //点=>边的终点Array,先按起点分组,然后拿出终点组成数组
+    prerequisites.foreach(n => degree(n(0)) += 1) //统计入度
+    val edges = prerequisites.groupBy(_ (1)).mapValues(_.map(_ (0))) //起点=>边的终点Array,先按起点分组,然后拿出终点组成数组
     def bfs(q: List[Int]): Unit = if (q.nonEmpty) {
       val next = edges.getOrElse(q.head, Array()) //当前点连接的点,没有出度的话,拿空数组可以正常继续下面的计算
       degree(q.head) = -1 //在入度数组中标记-1表示这个点删掉了
       next.foreach(n => degree(n) -= 1) //去掉当前点之后入度-1
       bfs(q.tail ++ next.filter(degree(_) == 0)) //继续搜索那些新的入度为0的节点
     }
-
-    bfs(degree.zipWithIndex.filter(_._1 == 0).map(_._2).toList) //计算入度为0的节点,带下标zip是为了拿到节点ID, 开始搜索
+    //计算入度为0的节点,带下标zip是为了map的时候可以拿到节点ID, 开始搜索
+    bfs(degree.zipWithIndex.filter(_._1 == 0).map(_._2).toList)
     degree.count(_ != -1) == 0 //最后看入度数组,如果全部是-1,则可以完成
   }
 }

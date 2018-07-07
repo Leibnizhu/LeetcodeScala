@@ -3,20 +3,20 @@ package leetcode.hard.treegraph
 import org.scalatest.FunSuite
 
 class CourseScheduleTest extends FunSuite {
-  test("2, Array(Array(1,0))") {
+  test("2, [[1,0]]") {
     assert(CourseSchedule.canFinish(2, Array(Array(1, 0))))
   }
 
-  test("2, Array(Array(1,0),Array(0,1))") {
+  test("2, [[1,0],[0,1]]") {
     assert(!CourseSchedule.canFinish(2, Array(Array(1, 0), Array(0, 1))))
   }
 
-  test("3, Array(Array(1,0),Array(1,2),Array(2,0))") {
-    assert(!CourseSchedule.canFinish(3, Array(Array(1, 0), Array(0, 2), Array(2, 1))))
+  test("3, [[0,1],[2,1],[0,2]]") {
+    assert(!CourseSchedule.canFinish(3, Array(Array(0, 1), Array(2, 0), Array(1, 2))))
   }
 
-  test("3, Array(Array(1,0),Array(1,2),Array(0,2))") {
-    assert(CourseSchedule.canFinish(3, Array(Array(1, 0), Array(1, 2), Array(0, 2))))
+  test("3, [[0,1],[2,1],[2,0]]") {
+    assert(CourseSchedule.canFinish(3, Array(Array(0, 1), Array(2, 1), Array(2, 0))))
   }
 
   test("large 800 courses") {
