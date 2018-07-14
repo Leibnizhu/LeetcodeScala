@@ -17,6 +17,7 @@ object WildcardMatching {
     * 可以用动态规划,遍历p,用一个数组记录当前s每个字符匹配的情况(针对当前p,比如第一次遍历匹配p(0),第二次遍历匹配p(0,1))
     * 遇到*的话,上一轮匹配好的字符之后都可以匹配上,所以 f(j) = f(j - 1) || f(j),从左到右更新f
     * 遇到其他字符,则要么字符匹配要么跟?匹配,同时前提是上一位已经匹配
+    * 参考了,https://blog.csdn.net/glDemo/article/details/47678159,将二维的动态规划数组优化为1维的
     */
   def isMatch(s: String, p: String): Boolean = {
     val (m, n) = (s.length, p.length)
@@ -31,7 +32,7 @@ object WildcardMatching {
       for (c <- p.toCharArray) c match {
         case '*' => for (j <- 1 to m) //遇到通配符,可以认为后面的全部都可以匹配
           status(j) = status(j - 1) || status(j) //如果前面的已经匹配上,那么遇到*依旧可以匹配
-        case _ => for (j <- m to 1 by -1)
+        case _ => for (j <- m to 1 by -1) //依赖前一位,为了避免覆盖旧结果,从尾部向前遍历
           status(j) = (c == '?' || c == s.charAt(j - 1)) && status(j - 1) //当前字符匹配上或遇到?通配符,同时前一位要匹配上才行
           status(0) = false //第一次遇到非*符,应该把初始条件去掉,靠后面匹配的情况来继续迭代计算
       }
