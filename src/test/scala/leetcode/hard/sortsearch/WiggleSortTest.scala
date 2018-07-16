@@ -2,6 +2,9 @@ package leetcode.hard.sortsearch
 
 import org.scalatest.FunSuite
 
+import scala.language.implicitConversions
+import leetcode.hard.sortsearch.WiggleSort.base
+
 class WiggleSortTest extends FunSuite {
   test("1, 5, 1, 1, 6, 4") {
     val arr = Array(1, 5, 1, 1, 6, 4)

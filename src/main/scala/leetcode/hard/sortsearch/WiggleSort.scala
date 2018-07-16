@@ -1,5 +1,7 @@
 package leetcode.hard.sortsearch
 
+import scala.language.implicitConversions
+
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/59/sorting-and-searching/151/
   *
@@ -14,8 +16,8 @@ object WiggleSort {
     * 如果左的个数小于等于k,证明中位数应该在中或右里面,进一步判断中的范围是否覆盖k(中位数)位置,包含则返回mid,否则在右边递归找
     * 如果左的个数大于k,则中位数在左里面,则递归在左边找
     */
-  def findKth(nums: Array[Int], k: Int): Int = {
-    val mid = nums(0) //比较的基准
+  def findKth(nums: Array[Int], k: Int)(implicit f: Array[Int] => Int): Int = {
+    lazy val mid = f(nums) //比较的基准
     val left = nums.filter(_ < mid)
     val right = nums.filter(_ > mid)
     val midLeft = k - nums.length + right.length //左边和中间去掉k位之后剩余个数
@@ -24,6 +26,8 @@ object WiggleSort {
     else
       findKth(left, k)
   }
+
+  implicit def base(nums:Array[Int]):Int = nums(0)
 
   /**
     * 最直观的方法是升序排序,然后分别交换下标1和2,3和4,....的数字,但是显然需要O(n*log n)时间,不满足进阶要求
