@@ -40,7 +40,7 @@ class WiggleSortTest extends FunSuite {
     assert(WiggleSort.findKth(Array(1, 5, 1, 1, 6, 4), 3) == 1)
     assert(WiggleSort.findKth(Array(1, 3, 2, 2, 3, 1), 7/2) == 2)
     assert(WiggleSort.findKth(Array(1, 4, 5, 2, 3, 7, 6), 4) == 4)
-    assert(WiggleSort.findKth(Array(1), 0) == 1)
+    assert(WiggleSort.findKth(Array(1), 1) == 1)
     assert(WiggleSort.findKth(Array(1, 3, 2, 2, 2, 1, 1, 3, 1, 1, 2), 6) == 2)
   }
 }
