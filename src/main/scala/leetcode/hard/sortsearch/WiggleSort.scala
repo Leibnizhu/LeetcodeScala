@@ -34,20 +34,20 @@ object WiggleSort {
     val len = nums.length
     val tmp = new Array[Int](len)
     Array.copy(nums, 0, tmp, 0, len)
-    val mid = findKth(nums, 0, nums.length - 1, nums.length / 2)
-    val ans = Array.fill(len)(mid)
+    val mid = findKth(tmp, 0, len - 1, len / 2)
+    val res = Array.fill(len)(mid)
     val even = len % 2 == 0
     var l = if (even) len - 2 else 0
     var r = if (even) 1 else len - 2
     for (i <- 0 until len) {
       if (nums(i) < mid) {
-        ans(l) = nums(i)
+        res(l) = nums(i)
         l += (if (even) -2 else 2)
       } else if (nums(i) > mid) {
-        ans(r) = nums(i)
+        res(r) = nums(i)
         r += (if (even) 2 else -2)
       }
     }
-    Array.copy(ans, 0, nums, 0, len)
+    Array.copy(res, 0, nums, 0, len)
   }
 }
