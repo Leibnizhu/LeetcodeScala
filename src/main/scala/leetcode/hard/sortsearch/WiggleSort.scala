@@ -34,19 +34,18 @@ object WiggleSort {
   def wiggleSort(nums: Array[Int]): Unit = {
     val len = nums.length
     val mid = findKth(nums, (len + 1) / 2)
-    val res = Array.fill(len)(mid)
+    val res = Array.fill(len)(mid) //结果数组, 默认剩余位置填充中位数
     val even = len % 2 == 0
     var l = if (even) len - 2 else 0
     var r = if (even) 1 else len - 2
-    for (i <- 0 until len) {
-      if (nums(i) < mid) {
-        res(l) = nums(i)
-        l += (if (even) -2 else 2)
-      } else if (nums(i) > mid) {
-        res(r) = nums(i)
-        r += (if (even) 2 else -2)
-      }
-    }
-    Array.copy(res, 0, nums, 0, len)
+    nums.filter(_ < mid).foreach(n => {
+      res(l) = n
+      l += (if (even) -2 else 2)
+    })
+    nums.filter(_ > mid).foreach(n => {
+      res(r) = n
+      r += (if (even) 2 else -2)
+    })
+    Array.copy(res, 0, nums, 0, len) //结果复制到原数组
   }
 }
