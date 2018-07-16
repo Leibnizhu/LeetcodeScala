@@ -21,4 +21,10 @@ class WiggleSortTest extends FunSuite {
     case i if i % 2 == 1 => arr(i - 1) < arr(i)
     case i => arr(i - 1) > arr(i)
   }
+
+  test("middle") {
+    assert(WiggleSort.findKth(Array(1, 5, 1, 1, 6, 4), 3) == 1)
+    assert(WiggleSort.findKth(Array(1, 3, 2, 2, 3, 1), 3) == 2)
+    assert(WiggleSort.findKth(Array(1, 4, 5, 2, 3, 7, 6), 4) == 4)
+  }
 }
