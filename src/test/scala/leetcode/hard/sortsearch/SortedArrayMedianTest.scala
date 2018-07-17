@@ -14,4 +14,8 @@ class SortedArrayMedianTest extends FunSuite {
   test("sample3") {
     assert(SortedArrayMedian.findMedianSortedArrays(Array(1), Array(3, 4, 7, 8, 11)) == 5.5)
   }
+
+  test("sample4") {
+    assert(SortedArrayMedian.findMedianSortedArrays(Array(3, 4, 7, 8, 11), Array(1)) == 5.5)
+  }
 }

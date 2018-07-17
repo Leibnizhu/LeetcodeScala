@@ -18,15 +18,20 @@ object SortedArrayMedian {
       */
     def findKth(a: Array[Int], al: Int, ar: Int)(b: Array[Int], bl: Int, br: Int)(k: Int): Int = {
       val (la, lb) = (ar - al + 1, br - bl + 1) //当前的长度
-      if (la > lb) { //保证a数组更短,有了这个假设才有下面的判断
-        findKth(b, bl, br)(a, al, ar)(k)
-      } else if (la == 0) { //短的一方长度为零了,要找的数必然在另一方,直接取即可
+      if (la == 0) { //短的一方长度为零了,要找的数必然在另一方,直接取即可
         b(k - 1)
+      } else if (lb == 0) {
+        a(k - 1)
       } else if (k == 1) { //找第一个,合并后必然是两方第一个元素较小者
         Math.min(a(al), b(bl))
       } else {
-        val ia = Math.min(la, k >> 1) //本次迭代在a数组取多少个元素,最多只能取全部或k/2
-        val ib = k - ia //本次迭代在b数组取多少个元素
+        val (ia, ib) = if (la < lb) {
+          val tmpIa = Math.min(la, k >> 1) //本次迭代在a数组取多少个元素,最多只能取全部或k/2
+          (tmpIa, k - tmpIa) //本次迭代在b数组取多少个元素
+        } else {
+          val tmpIb = Math.min(lb, k >> 1)
+          (k - tmpIb, tmpIb)
+        }
         a(al + ia - 1) - b(bl + ib - 1) match {
           case d if d < 0 => findKth(a, al + ia, ar)(b, bl, br)(k - ia) //a的数更小,说明a要往右边找才行
           case d if d > 0 => findKth(a, al, ar)(b, bl + ib, br)(k - ib) //b的数更小,b要往右边找
