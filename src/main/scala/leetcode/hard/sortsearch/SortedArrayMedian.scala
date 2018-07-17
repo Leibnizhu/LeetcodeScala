@@ -17,7 +17,8 @@ object SortedArrayMedian {
       * 在已排序的a(下标范围[al,ar])和b(下标范围[bl,br])查找如果合并后排在第k位置的数
       */
     def findKth(a: Array[Int], al: Int, ar: Int)(b: Array[Int], bl: Int, br: Int)(k: Int): Int = {
-      val (la, lb) = (ar - al + 1, br - bl + 1) //当前的长度
+      val la = ar - al + 1 //当前a的长度
+      val lb = br - bl + 1 //当前b的长度
       if (la == 0) { //短的一方长度为零了,要找的数必然在另一方,直接取即可
         b(k - 1)
       } else if (lb == 0) {
@@ -25,13 +26,9 @@ object SortedArrayMedian {
       } else if (k == 1) { //找第一个,合并后必然是两方第一个元素较小者
         Math.min(a(al), b(bl))
       } else {
-        val (ia, ib) = if (la < lb) {
-          val tmpIa = Math.min(la, k >> 1) //本次迭代在a数组取多少个元素,最多只能取全部或k/2
-          (tmpIa, k - tmpIa) //本次迭代在b数组取多少个元素
-        } else {
-          val tmpIb = Math.min(lb, k >> 1)
-          (k - tmpIb, tmpIb)
-        }
+        var ia = Math.min(la, k >> 1) //本次迭代在a数组取多少个元素,最多只能取全部或k/2
+        var ib = Math.min(lb, k >> 1) //本次迭代在b数组取多少个元素
+        if (la > lb) ia += k - ia - ib else ib += k - ia - ib
         a(al + ia - 1) - b(bl + ib - 1) match {
           case d if d < 0 => findKth(a, al + ia, ar)(b, bl, br)(k - ia) //a的数更小,说明a要往右边找才行
           case d if d > 0 => findKth(a, al, ar)(b, bl + ib, br)(k - ib) //b的数更小,b要往右边找
