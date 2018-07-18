@@ -14,4 +14,8 @@ class MaxProductSubArrayTest extends FunSuite {
   test("-2,0,-1") {
     assert(MaxProductSubArray.maxProduct(Array(-2, 0, -1)) == 0)
   }
+
+  test("-2"){
+    assert(MaxProductSubArray.maxProduct(Array(-2)) == -2)
+  }
 }

@@ -1,5 +1,7 @@
 package leetcode.hard.dynamic
 
+import java.lang.Math._
+
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/60/dynamic-programming/154/
   *
@@ -11,15 +13,12 @@ object MaxProductSubArray {
     * 但乘法会负负得正,因此除了保存最大值,还要保存最小值(负数,遇到新的负数的时候,也要拿出来相乘评估新的最大/小值)
     */
   def maxProduct(nums: Array[Int]): Int = {
-    def repeat(a: Int, b: Int, c: Int)(f: (Int, Int) => Int) = f(f(a, b), c)
-    var totalMax = Int.MinValue
-    var curMax = 1
-    var curMin = 1
-    nums.foreach(num => {
+    var totalMax,curMax,curMin = nums(0)
+    nums.tail.foreach(num => {
       val tmpMax = curMax
-      curMax = repeat(num, num * tmpMax, num * curMin)(Math.max)
-      curMin = repeat(num, num * tmpMax, num * curMin)(Math.min)
-      totalMax = Math.max(totalMax, curMax)
+      curMax = (num /: Array(num * tmpMax, num * curMin)) {max}
+      curMin = (num /: Array(num * tmpMax, num * curMin)) {min}
+      totalMax = max(totalMax, curMax)
     })
     totalMax
   }
