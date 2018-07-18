@@ -12,24 +12,18 @@ object Intersect {
     * 找到相同的就是交集的内容,不同的较小者往前走,直到队尾
     */
   def intersect(nums1: Array[Int], nums2: Array[Int]): Array[Int] = {
-    val sortedNums1 = nums1.sorted
-    val sortedNums2 = nums2.sorted
-    var result = List[Int]()
-    var p1 = 0
-    var p2 = 0
-    while (p1 < nums1.length && p2 < nums2.length) {
-      val n1 = sortedNums1(p1)
-      val n2 = sortedNums2(p2)
-      if (n1 == n2) {
-        result ::= n1
-        if(p1 <= nums1.length -1)p1 += 1
-        if(p2 <= nums2.length -1)p2 += 1
-      } else if (n1 > n2) {
-        p2 += 1
+    def compare(al: Array[Int], pa: Int)(bl: Array[Int], pb: Int)(curRes: List[Int]): List[Int] =
+      if (pa < al.length && pb < bl.length) {
+        val (a, b) = (al(pa), bl(pb))
+        a - b match {
+          case 0 => compare(al, if (pa <= al.length - 1) pa + 1 else pa)(bl, if (pb <= bl.length - 1) pb + 1 else pb)(curRes :+ a)
+          case d if d > 0 => compare(al, pa)(bl, pb + 1)(curRes)
+          case _ => compare(al, pa + 1)(bl, pb)(curRes)
+        }
       } else {
-        p1 += 1
+        curRes
       }
-    }
-    result.toArray
+
+    compare(nums1.sorted, 0)(nums2.sorted, 0)(List()).toArray
   }
 }
