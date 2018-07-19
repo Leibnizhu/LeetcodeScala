@@ -16,9 +16,7 @@ object PerfectSquares {
     for {
       i <- 1 to n //遍历填充备忘录
       j <- 1 to Math.sqrt(i).intValue //遍历小于i的完全平方数
-    } yield if (memo(i) > 1 + memo(i - j * j)) { //出现了比之前更优的解
-      memo(i) = 1 + memo(i - j * j)
-    }
+    } yield if (memo(i) > 1 + memo(i - j * j)) memo(i) = 1 + memo(i - j * j) //出现了比之前更优的解
     memo.last
   }
 }
