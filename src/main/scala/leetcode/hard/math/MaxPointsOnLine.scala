@@ -18,7 +18,7 @@ object MaxPointsOnLine {
       val denominator = points(p1).x - points(p2).x
       val numeratorAbs = Math.abs(numerator)
       val denominatorAbs = Math.abs(denominator)
-      val gcd = GCD(numeratorAbs, denominatorAbs) //0和任意一个非零数'a'的gcd为'a',0和0的gcd为0,所以斜率为无穷的情况分母为0
+      val gcd = GCD(numeratorAbs, denominatorAbs) //gcd(0,x)=x,gcd(0,0)=0,斜率无穷时分母为0
       s"${sign(numerator, denominator)}${numeratorAbs / gcd}/${denominatorAbs / gcd}"
     }
 
@@ -35,9 +35,9 @@ object MaxPointsOnLine {
       case 0 => 0 //特殊情况,无点,共线的点数为0
       case 1 => 1 //特殊情况,1个点,共线的点数为1
       case _ => (for (i <- points.indices) yield {
-        val samePointCount = points.indices.count(j => isSame(i, j)) //与当前点相同的点个数
+        val samePoints = points.indices.count(j => isSame(i, j)) //与当前点相同的点个数
         val slopeFreq = points.indices.filter(j => j != i && !isSame(i, j)).groupBy(j => slope(i, j)) //当前点连线斜率频次
-        if (slopeFreq.isEmpty) List(samePointCount) else slopeFreq.map(_._2.length + samePointCount) //若没有不同的点返回相同点个数
+        if (slopeFreq.isEmpty) List(samePoints) else slopeFreq.map(_._2.length + samePoints) //若没有不同的点返回相同点个数
       }).flatten match {
         case l if l.isEmpty => 0
         case l => l.max
