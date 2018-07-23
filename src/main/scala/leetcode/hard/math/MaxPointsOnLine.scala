@@ -35,13 +35,11 @@ object MaxPointsOnLine {
       case 0 => 0 //特殊情况,无点,共线的点数为0
       case 1 => 1 //特殊情况,1个点,共线的点数为1
       case _ => (for (i <- points.indices) yield {
-        val samePoints = points.indices.count(j => isSame(i, j)) //与当前点相同的点个数
-        val slopeFreq = points.indices.filter(j => j != i && !isSame(i, j)).groupBy(j => slope(i, j)) //当前点连线斜率频次
-        if (slopeFreq.isEmpty) List(samePoints) else slopeFreq.map(_._2.length + samePoints) //若没有不同的点返回相同点个数
-      }).flatten match {
-        case l if l.isEmpty => 0
-        case l => l.max
-      }
+        val otherPoints = points.indices.filter(!isSame(i, _)) //过滤所有与当前点不同的点
+        val samePoints = points.length - otherPoints.length //与当前点相同的点个数
+        if (otherPoints.isEmpty) List(samePoints) //若没有不同的点,则返回相同点个数,当前点同线点只有这些
+        else otherPoints.groupBy(slope(i, _)).map(_._2.length + samePoints) //否则按斜率分组,取分组长度+相同点个数即同线点的数量
+      }).flatten.max
     }
   }
 }
