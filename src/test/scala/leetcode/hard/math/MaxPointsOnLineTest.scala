@@ -8,15 +8,15 @@ class MaxPointsOnLineTest extends FunSuite {
   }
 
   test("one point") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(2, 2))) == 1)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(2, 2))) == 1)
   }
 
   test("three same point") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(2, 2), Point(2, 2), Point(2, 2))) == 3)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(2, 2), new Point(2, 2), new Point(2, 2))) == 3)
   }
 
   test("two same point group") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(2, 2), Point(2, 2), Point(1, 1), Point(1, 1))) == 4)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(2, 2), new Point(2, 2), new Point(1, 1), new Point(1, 1))) == 4)
   }
 
   /**
@@ -29,7 +29,7 @@ class MaxPointsOnLineTest extends FunSuite {
     * 0  1  2  3  4
     **/
   test("sample1") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(1, 1), Point(2, 2), Point(3, 3))) == 3)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(1, 1), new Point(2, 2), new Point(3, 3))) == 3)
   }
 
   /**
@@ -43,14 +43,14 @@ class MaxPointsOnLineTest extends FunSuite {
     * 0  1  2  3  4  5  6
     **/
   test("sample2") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(1, 1), Point(3, 2), Point(5, 3), Point(4, 1), Point(2, 3), Point(1, 4))) == 4)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(1, 1), new Point(3, 2), new Point(5, 3), new Point(4, 1), new Point(2, 3), new Point(1, 4))) == 4)
   }
 
   test("sample3") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(0, 0), Point(94911151, 94911150), Point(94911152, 94911151))) == 2)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(0, 0), new Point(94911151, 94911150), new Point(94911152, 94911151))) == 2)
   }
 
   test("sample4") {
-    assert(MaxPointsOnLine.maxPoints(Array(Point(0, 0), Point(1, 1), Point(1, -1))) == 2)
+    assert(MaxPointsOnLine.maxPoints(Array(new Point(0, 0), new Point(1, 1), new Point(1, -1))) == 2)
   }
 }
