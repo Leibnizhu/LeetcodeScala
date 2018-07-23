@@ -4,6 +4,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/61/design/162/
+ *
+ * 给出一个嵌套的整型列表。设计一个迭代器，遍历这个整型列表中的所有整数。
+ * 列表中的项或者为一个整数，或者是另一个列表。
+ *
+ * 示例 1:
+ * 给定列表 [[1,1],2,[1,1]],
+ * 通过重复调用 next 直到 hasNext 返回false，next 返回的元素的顺序应该是: [1,1,2,1,1].
+ *
+ * 示例 2:
+ * 给定列表 [1,[4,[6]]],
+ * 通过重复调用 next 直到 hasNext 返回false，next 返回的元素的顺序应该是: [1,4,6].
+ */
 public class NestedIterator implements Iterator<Integer> {
     private List<Integer> nums = new ArrayList<>();
     private Iterator<Integer> iterator = null;

@@ -3,6 +3,15 @@ package leetcode.hard.design
 import scala.collection.mutable
 
 /**
+  * https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/61/design/163/
+  *
+  * 中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+  * 设计一个支持以下两种操作的数据结构：
+  *  - void addNum(int num) - 从数据流中添加一个整数到数据结构中。
+  *  - double findMedian() - 返回目前所有元素的中位数。
+  *
+  * -------------------------------------------------------------------------------
+  * 分析:
   * 1. 不排序,插入O(1),查询的话用之前的方法就是O(n)(类似快排,参考WiggleSort)
   * 2. 插入排序,那就插入O(n),查询O(1)(直接查中间的数)
   * 3. 也可以懒计算,就是插入不排序,维护一个标志识别当前数组是否排序,查询时排序(O(n*logn)对连续查询有优化)
