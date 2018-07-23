@@ -14,10 +14,8 @@ object MaxPointsOnLine {
   def maxPoints(points: Array[Point]): Int = {
     //拼接斜率的字符串,符号分子/分母(为了避免求Double不精确,同时解决无穷大判断等问题)
     def slope(p1: Int, p2: Int): String = {
-      val numerator = points(p1).y - points(p2).y
-      val denominator = points(p1).x - points(p2).x
-      val numeratorAbs = Math.abs(numerator)
-      val denominatorAbs = Math.abs(denominator)
+      val (numerator, denominator) = (points(p1).y - points(p2).y, points(p1).x - points(p2).x) //斜率分母分子
+      val (numeratorAbs, denominatorAbs) = (Math.abs(numerator), Math.abs(denominator))
       val gcd = GCD(numeratorAbs, denominatorAbs) //gcd(0,x)=x,gcd(0,0)=0,斜率无穷时分母为0
       s"${sign(numerator, denominator)}${numeratorAbs / gcd}/${denominatorAbs / gcd}"
     }
