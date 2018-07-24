@@ -19,7 +19,8 @@ object QueueReconstruction {
    */
   def reconstructQueue(people: Array[Array[Int]]): Array[Array[Int]] = {
     val buf = new ListBuffer[Array[Int]]()
-    people.sortWith((l,r) => if(l(0) == r(0)) l(1) < r(1) else l(0) > r(0)).foreach(p => buf.insert(p(1), p))
+    people.sortWith((l, r) => if (l(0) == r(0)) l(1) < r(1) else l(0) > r(0)) //按h降序k升序排序
+      .foreach(p => buf.insert(p(1), p)) //以k作为下标插入到List缓存
     buf.toArray
   }
 }
