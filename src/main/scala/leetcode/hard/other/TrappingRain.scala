@@ -19,13 +19,13 @@ object TrappingRain {
    */
     def trap(height: Array[Int]): Int = {
       val peakIndex = (0/:height.indices) {(curMax, i) => if(height(i) > height(curMax)) i else curMax} //数组最大值的下标
-      val leftWater = (0 until peakIndex).foldLeft((0, 0)) { (cur, i) => //((左峰值,总雨水),当前下标)
-        if (height(i) > cur._1) (height(i), cur._2) //更新左峰值
-        else (cur._1, cur._2 + cur._1 - height(i)) //当前点接的雨水统计
+      val leftWater = (0 until peakIndex).foldLeft((0, 0)) { case((leftPeak, water), i) => //((左峰值,总雨水),当前下标)
+        if (height(i) > leftPeak) (height(i), water) //更新左峰值,此时当前节点不可能接到雨水
+        else (leftPeak, water + leftPeak - height(i)) //当前点接的雨水统计
       }._2 //左边接到的雨水
-      (height.length - 1 until peakIndex by -1).foldLeft((0, leftWater)) { (cur, i) => //((右峰值,总雨水),当前下标)
-        if (height(i) > cur._1) (height(i), cur._2) //更新右峰值
-        else (cur._1, cur._2 + cur._1 - height(i)) //当前点接的雨水统计
+      (height.length - 1 until peakIndex by -1).foldLeft((0, leftWater)) { case((rightPeak, water), i) => 
+        if (height(i) > rightPeak) (height(i), water) //更新右峰值,此时当前节点不可能接到雨水
+        else (rightPeak, water + rightPeak - height(i)) //当前点接的雨水统计
       }._2 //总接到雨水
     }
 }
