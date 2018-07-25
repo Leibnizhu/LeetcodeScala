@@ -27,13 +27,13 @@ object LargestRectangleInHistogram {
       * 满足栈单调增的入栈,否则合并前面的柱子计算面积,直到满足单调增为止
       *
       * @param curArea fold传递的中间结果值
-      * @param i       当前下标
+      * @param i       当前下标, 当i=数组长度时,不再入栈,直接合并计算面积
       * @return 本次迭代计算的面积
       */
     def calCurArea(curArea: Int, i: Int): Int =
-      if (stack.isEmpty || i < len && heights(stack.head) <= heights(i)) { //满足栈的单调增性,无需合并计算面积
+      if (stack.isEmpty || i < len && heights(stack.head) <= heights(i)) { //<len是考虑到最后一次必须合并计算面积
         stack ::= i //满足条件的可以入栈
-        curArea
+        curArea //无需合并计算面积,直接返回
       } else {
         val height = heights(stack.head) //当前要计算的矩形的高度
         stack = stack.tail //相当于出栈
@@ -41,7 +41,6 @@ object LargestRectangleInHistogram {
         calCurArea(Math.max(curArea, newArea), i) //继续递归计算面积直到栈顶比当前值小,满足单调性,即合并成功
       }
 
-    val totalArea = (0 /: (0 until len)) (calCurArea) //递归计算面积
-    calCurArea(totalArea, len) //补刀,处理最大矩形的右边界出现在数组最右边的情况
+     (0 /: (0 to len)) (calCurArea) //递归计算面积,考虑到最大矩形的右边界出现在数组最右边的情况,要算到len为止,在递归里面约束
   }
 }

@@ -14,4 +14,8 @@ class LargestRectangleInHistogramTest extends FunSuite {
   test("sample3") {
     assert(LargestRectangleInHistogram.largestRectangleArea(Array(1)) == 1)
   }
+
+  test("sample4") {
+    assert(LargestRectangleInHistogram.largestRectangleArea(Array(1, 2, 3, 4, 5)) == 9)
+  }
 }
