@@ -37,8 +37,8 @@ object LargestRectangleInHistogram {
       } else {
         val height = heights(stack.head) //当前要计算的矩形的高度
         stack = stack.tail //相当于出栈
-        val newArea = Math.max(curArea, height * (if (stack.isEmpty) i else i - stack.head - 1)) //计算面积
-        calCurArea(newArea, i) //继续递归计算面积直到栈顶比当前值小,满足单调性,即合并成功
+        val newArea = height * (if (stack.isEmpty) i else i - stack.head - 1) //计算面积
+        calCurArea(Math.max(curArea, newArea), i) //继续递归计算面积直到栈顶比当前值小,满足单调性,即合并成功
       }
 
     val totalArea = (0 /: (0 until len)) (calCurArea) //递归计算面积
