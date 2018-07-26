@@ -39,20 +39,16 @@ object IsValidSudoku {
     val lineCheck = (true /: board) ((res, line) => checkNine(line) && res)
     //检查列
     var columnCheck = true
-    for (i <- 0 until 9) {
+    for (i <- 0 until 9)
       columnCheck &= checkNine((for {j <- 0 until 9} yield board(j)(i)).toArray)
-    }
     //检查3x3
     var boxCheck = true
-    for (i <- 0 until 3) {
-      for (j <- 0 until 3) {
-        //构造方块并检查
-        boxCheck &= checkNine((for {
-          m <- i * 3 until (i + 1) * 3
-          n <- j * 3 until (j + 1) * 3
-        } yield board(m)(n)).toArray)
-      }
-    }
+    for {i <- 0 until 3; j <- 0 until 3}
+    //构造方块并检查
+      boxCheck &= checkNine((for {
+        m <- i * 3 until (i + 1) * 3
+        n <- j * 3 until (j + 1) * 3
+      } yield board(m)(n)).toArray)
 
     lineCheck && columnCheck && boxCheck
   }

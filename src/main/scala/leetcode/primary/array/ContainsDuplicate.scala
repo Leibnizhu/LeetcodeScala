@@ -1,7 +1,5 @@
 package leetcode.primary.array
 
-import scala.collection.mutable
-
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/24/
   *
@@ -12,14 +10,13 @@ object ContainsDuplicate {
   /**
     * 直接用HashSet存储,判断size即可,O(n)
     */
-  def containsDuplicate(nums: Array[Int]): Boolean = {
+  def containsDuplicate(nums: Array[Int]): Boolean =
     if (nums == null)
       false
     else {
-      val set = mutable.HashSet[Int]()
-      for (num <- nums)
-        set.add(num)
+      var set = Set[Int]()
+      nums.foreach(set += _)
       set.size != nums.length
     }
-  }
+
 }

@@ -14,10 +14,9 @@ object Intersect {
   def intersect(nums1: Array[Int], nums2: Array[Int]): Array[Int] = {
     def compare(al: Array[Int], pa: Int)(bl: Array[Int], pb: Int)(curRes: List[Int]): List[Int] =
       if (pa < al.length && pb < bl.length) {
-        val (a, b) = (al(pa), bl(pb))
-        a - b match {
-          case 0 => compare(al, if (pa <= al.length - 1) pa + 1 else pa)(bl, if (pb <= bl.length - 1) pb + 1 else pb)(curRes :+ a)
-          case d if d > 0 => compare(al, pa)(bl, pb + 1)(curRes)
+        al(pa) match {
+          case a if a == bl(pb) => compare(al, Math.min(al.length, pa + 1))(bl, Math.min(bl.length, pb + 1))(curRes :+ a)
+          case a if a > bl(pb) => compare(al, pa)(bl, pb + 1)(curRes)
           case _ => compare(al, pa + 1)(bl, pb)(curRes)
         }
       } else {

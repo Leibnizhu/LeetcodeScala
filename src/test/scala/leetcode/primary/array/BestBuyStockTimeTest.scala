@@ -33,8 +33,8 @@ class BestBuyStockTimeTest extends FunSuite{
     assert(income == 0)
   }
 
-  test("null"){
-    val prices = null
+  test("empty"){
+    val prices = Array[Int]()
     val income = BestBuyStockTime.maxProfit(prices)
     assert(income == 0)
   }
