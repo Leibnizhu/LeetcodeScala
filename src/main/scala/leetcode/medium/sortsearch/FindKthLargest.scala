@@ -28,4 +28,35 @@ object FindKthLargest {
     }
     queue.head
   }
+
+  def findKthLargest2(nums: Array[Int], k: Int): Int = {
+    def findKth(nums: Array[Int], k: Int)(left:Int, right:Int): Int = {
+      if(left == right && k == 1) {
+        nums(left)
+      } else {
+        //快排 partition
+        var i = left
+        var j = right
+        println(s"call l:$left,r=$right,k=$k")
+        val pivot = nums(left)
+        while(i < j){
+          while(i < j && nums(j) >= pivot) j -= 1
+          nums(i) = nums(j)
+          while(i < j && nums(i) <= pivot) i += 1
+          nums(j) = nums(i)
+        }
+        nums(i) = pivot
+        val largerSize = right - i + 1
+        println(s"l:$left,r=$right,pivot=$pivot,pos=$i,largerSize=$largerSize,nums:${nums.toList}")
+        if(largerSize == k){
+          nums(i)
+        } else if (largerSize < k) {
+          findKth(nums, k - largerSize)(left, i - 1)
+        } else {
+          findKth(nums, k)(i + 1, right)
+        }
+      }
+    }
+    findKth(nums, k)(0, nums.length-1)
+  }
 }
