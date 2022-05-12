@@ -1,5 +1,7 @@
 package leetcode.hard.sortsearch
 
+import scala.annotation.tailrec
+
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/59/sorting-and-searching/153/
   *
@@ -16,6 +18,7 @@ object SortedArrayMedian {
     /**
       * 在已排序的a(下标范围[as,length-1])和b(下标范围[bs,length-1])查找如果合并后排在第k位置的数
       */
+    @tailrec
     def findKth(a: Array[Int], as: Int)(b: Array[Int], bs: Int)(k: Int): Int = {
       val la = a.length - as //当前a的长度
       val lb = b.length - bs //当前b的长度

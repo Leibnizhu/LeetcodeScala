@@ -20,7 +20,7 @@ object LongestSubstring {
       val cur:Int = s.charAt(i)
       if(pos(cur) >= start) { // 当前字符在start之后出现过，发生重复了
         maxLen = Math.max(i - start, maxLen) //当前重复的字符不算进长度里面
-        start = pos(cur) + 1
+        start = pos(cur) + 1 //跳过重复的字符上一次出现的位置，重新开始比较
       }
       pos(cur) = i //维护pos数组
     }

@@ -5,15 +5,15 @@ import leetcode.common.ListNode
 /**
   * https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/31/linked-list/82/
   *
-  * 给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
+  * 给定两个非空链表来表示两个非负整数。位数按照[逆序]方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
   * 你可以假设除了数字 0 之外，这两个数字都不会以零开头。
   */
 object AddTwoNumbers {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
     var p1 = l1
     var p2 = l2
-    var carry = 0 //进位
-    var root: ListNode = null //链表表头
+    var carry = 0 //进位,因为是逆序的，每一位相加的进位给下一位处理就行
+    var root: ListNode = null //链表表头，用于返回
     var prev: ListNode = null //上一个节点
     while (p1 != null || p2 != null) { //只要还有一个不为空就继续，减少后面处理的代码
       val sum = Option(p1).map(_.x).getOrElse(0) + Option(p2).map(_.x).getOrElse(0) + carry
