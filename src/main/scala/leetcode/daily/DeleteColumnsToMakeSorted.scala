@@ -1,6 +1,7 @@
 package leetcode.daily
 
 /**
+  * 2022-05-12
   * {@see <a href='https://leetcode.cn/problems/delete-columns-to-make-sorted/'/> }
   */
 object DeleteColumnsToMakeSorted {

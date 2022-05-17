@@ -5,6 +5,7 @@ package leetcode.daily
   */
 object LargestTriangleArea {
   /**
+    * 2022-05-15
     * 摆烂了，直接暴力法+鞋带公式
     */
   def largestTriangleArea(points: Array[Array[Int]]): Double = {

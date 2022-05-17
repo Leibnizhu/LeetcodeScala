@@ -4,6 +4,7 @@ import scala.collection.mutable
 import scala.collection.immutable
 
 /**
+  * 2022-05-14
   * {@see <a href='https://leetcode.cn/problems/stickers-to-spell-word/'/> }
   */
 object StickersToSpellWord {

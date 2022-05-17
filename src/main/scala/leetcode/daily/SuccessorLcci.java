@@ -1,6 +1,7 @@
 package leetcode.daily;
 
 /**
+ * 2022-05-16
  * {@see <a href='https://leetcode.cn/problems/successor-lcci/'/> }
  */
 public class SuccessorLcci {
