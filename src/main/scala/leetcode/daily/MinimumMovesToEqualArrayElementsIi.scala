@@ -74,6 +74,8 @@ object MinimumMovesToEqualArrayElementsIi {
       nums(left)
     }
 
+    def findKthLargestByScalaSort(nums: Array[Int], k: Int): Int = (nums.sorted).apply(k - 1)
+
     val target = findKthLargestByQuickSort(nums, nums.length / 2 + 1)
     nums.map(n => math.abs(n - target)).sum
   }
