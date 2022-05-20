@@ -10,7 +10,7 @@ import scala.annotation.tailrec
 object FindRightInterval {
   def findRightInterval(intervals: Array[Array[Int]]): Array[Int] = {
     //Array([左区间值,原下标])
-    val sortedLeftWithIndex = intervals.map(r => r(0)).zipWithIndex.sortBy(t => t._1)
+    val sortedLeftWithIndex = intervals.map(_(0)).zipWithIndex.sortBy(_._1)
 
     //二分查找
     @tailrec
