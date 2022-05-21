@@ -137,7 +137,8 @@ local.properties
 target/
 .classpath
 .ensime
-project/build.properties
+# project/build.properties
+project/target
 .ensime_cache/
 
 .DS_Store

@@ -29,7 +29,7 @@ object NumberOfIslands {
       }
     }
 
-    if (grid.isEmpty || grid(0).isEmpty) {
+    if (grid.isEmpty || grid(0).length == 0) {
       0
     } else {
       val h = grid.length //高度
