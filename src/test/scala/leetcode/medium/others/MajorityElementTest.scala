@@ -1,8 +1,8 @@
 package leetcode.medium.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MajorityElementTest extends FunSuite {
+class MajorityElementTest extends AnyFunSuite {
   test("3,2,3") {
     assert(MajorityElement.majorityElement(Array(3, 2, 3)) == 3)
   }

@@ -1,8 +1,8 @@
 package leetcode.hard.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxPointsOnLineTest extends FunSuite {
+class MaxPointsOnLineTest extends AnyFunSuite {
   test("empty") {
     assert(MaxPointsOnLine.maxPoints(Array()) == 0)
   }

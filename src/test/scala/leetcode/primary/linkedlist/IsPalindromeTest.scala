@@ -1,9 +1,9 @@
 package leetcode.primary.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IsPalindromeTest extends FunSuite {
+class IsPalindromeTest extends AnyFunSuite {
   test("1->2") {
     check(Array(1,2), shouldBe = false)
   }

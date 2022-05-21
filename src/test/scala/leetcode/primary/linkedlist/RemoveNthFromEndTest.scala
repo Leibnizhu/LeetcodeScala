@@ -1,9 +1,9 @@
 package leetcode.primary.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RemoveNthFromEndTest extends FunSuite {
+class RemoveNthFromEndTest extends AnyFunSuite {
 
   test("1->2->3->4->5, n = 2") {
     check(Array(1, 2, 3, 4, 5), 2)

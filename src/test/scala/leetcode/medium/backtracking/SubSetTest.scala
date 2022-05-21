@@ -1,8 +1,8 @@
 package leetcode.medium.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SubSetTest extends FunSuite{
+class SubSetTest extends AnyFunSuite{
   test("1,2,3"){
     val result = SubSet.subsets(Array(1,2,3))
     result.foreach(println(_))

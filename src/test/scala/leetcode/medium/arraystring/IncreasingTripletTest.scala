@@ -1,8 +1,8 @@
 package leetcode.medium.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IncreasingTripletTest extends FunSuite {
+class IncreasingTripletTest extends AnyFunSuite {
   test("1, 2, 3, 4, 5") {
     assert(IncreasingTriplet.increasingTriplet(Array(1, 2, 3, 4, 5)))
   }

@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FindKthLargestTest extends FunSuite{
+class FindKthLargestTest extends AnyFunSuite{
   test("[3,2,1,5,6,4] k = 2 by MinRootHeap"){
     assert(FindKthLargest.findKthLargest(Array(3,2,1,5,6,4), 2) == 5)
   }

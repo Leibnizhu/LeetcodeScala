@@ -1,9 +1,9 @@
 package leetcode.medium.treegraph
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class InOrderTraversalTest extends FunSuite{
+class InOrderTraversalTest extends AnyFunSuite{
   test("1,null,2,3"){
     val root = TreeNode(Array[Integer](1,null,2,null,null,3))
     val result = InOrderTraversal.inOrderTraversal(root)

@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RemoveDuplicatesFromSortedArrayTest extends FunSuite {
+class RemoveDuplicatesFromSortedArrayTest extends AnyFunSuite {
 
   /**
     * 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。

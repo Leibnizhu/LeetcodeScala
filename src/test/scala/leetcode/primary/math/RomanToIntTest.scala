@@ -1,8 +1,8 @@
 package leetcode.primary.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RomanToIntTest extends FunSuite{
+class RomanToIntTest extends AnyFunSuite{
   test("III"){
     assert(RomanToInt.romanToInt("III") == 3)
   }

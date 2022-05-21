@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FindFirstUniqueCharTest extends FunSuite {
+class FindFirstUniqueCharTest extends AnyFunSuite {
 
   test("leetcode") {
     check("leetcode", 0)

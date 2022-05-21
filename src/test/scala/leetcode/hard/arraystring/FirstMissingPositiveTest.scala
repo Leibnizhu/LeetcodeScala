@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FirstMissingPositiveTest extends FunSuite {
+class FirstMissingPositiveTest extends AnyFunSuite {
   test("1,2,0") {
     assert(FirstMissingPositive.firstMissingPositive(Array(1, 2, 0)) == 3)
   }

@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class HappyNumberTest extends FunSuite{
+class HappyNumberTest extends AnyFunSuite{
   /**
     * 1 pow 2 + 9 pow 2 = 82
     * 8 pow 2 + 2 pow 2 = 68

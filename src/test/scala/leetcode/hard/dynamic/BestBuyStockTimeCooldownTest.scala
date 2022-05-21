@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class BestBuyStockTimeCooldownTest extends FunSuite {
+class BestBuyStockTimeCooldownTest extends AnyFunSuite {
   test("null") {
     assert(BestBuyStockTimeCooldown.maxProfit(null) == 0)
   }

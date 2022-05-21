@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PowerTest extends FunSuite{
+class PowerTest extends AnyFunSuite{
   test("2.00000, 10"){
     assert(Power.myPow(2.00000, 10) == 1024.0000)
   }

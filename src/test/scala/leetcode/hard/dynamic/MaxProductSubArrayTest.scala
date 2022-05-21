@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxProductSubArrayTest extends FunSuite {
+class MaxProductSubArrayTest extends AnyFunSuite {
   test("2,3,-2,4") {
     assert(MaxProductSubArray.maxProduct(Array(2, 3, -2, 4)) == 6)
   }

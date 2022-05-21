@@ -1,8 +1,8 @@
 package leetcode.medium.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class BuildTreeTest extends FunSuite {
+class BuildTreeTest extends AnyFunSuite {
   test(" [3,9,20,15,7] && [9,3,15,20,7]") {
     val root = BuildTree.buildTree(Array(3, 9, 20, 15, 7), Array(9, 3, 15, 20, 7))
     assert(root.value == 3)

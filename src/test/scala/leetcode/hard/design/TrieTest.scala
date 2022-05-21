@@ -1,8 +1,8 @@
 package leetcode.hard.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TrieTest extends FunSuite{
+class TrieTest extends AnyFunSuite{
   test("sample"){
     val trie = new Trie
     trie.insert("apple")

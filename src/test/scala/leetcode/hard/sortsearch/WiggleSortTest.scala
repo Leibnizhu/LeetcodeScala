@@ -1,11 +1,11 @@
 package leetcode.hard.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
 import scala.language.implicitConversions
 import leetcode.hard.sortsearch.WiggleSort.base
 
-class WiggleSortTest extends FunSuite {
+class WiggleSortTest extends AnyFunSuite {
   test("1, 5, 1, 1, 6, 4") {
     val arr = Array(1, 5, 1, 1, 6, 4)
     WiggleSort.wiggleSort(arr)

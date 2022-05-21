@@ -1,8 +1,8 @@
 package leetcode.medium.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordSearchTest extends FunSuite {
+class WordSearchTest extends AnyFunSuite {
   test("sample 1") {
     val board = Array(
       Array('A', 'B', 'C', 'E'),

@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SortColorsTest extends FunSuite {
+class SortColorsTest extends AnyFunSuite {
   test("2,0,2,1,1,0") {
     val nums = Array(2, 0, 2, 1, 1, 0)
     SortColors.sortColors(nums)

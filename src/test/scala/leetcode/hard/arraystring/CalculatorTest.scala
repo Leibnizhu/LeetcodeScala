@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CalculatorTest extends FunSuite{
+class CalculatorTest extends AnyFunSuite{
   test("3+2*2"){
     assert(Calculator.calculate("3+2*2") == 7)
   }

@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FractionToDecimalTest extends FunSuite{
+class FractionToDecimalTest extends AnyFunSuite{
   test("1,2"){
     assert(FractionToDecimal.fractionToDecimal(1,2) == "0.5")
   }

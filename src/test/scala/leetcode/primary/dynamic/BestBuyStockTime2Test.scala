@@ -1,8 +1,8 @@
 package leetcode.primary.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class BestBuyStockTime2Test extends FunSuite{
+class BestBuyStockTime2Test extends AnyFunSuite{
 
   /**
     * 官方例子1

@@ -1,9 +1,9 @@
 package leetcode.hard.treegraph
 
 import leetcode.medium.design.BinaryTreeCodec.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LowestCommonAncestorTest extends FunSuite {
+class LowestCommonAncestorTest extends AnyFunSuite {
   test("sample1") {
     val n0 = new TreeNode(0)
     val n1 = new TreeNode(1)

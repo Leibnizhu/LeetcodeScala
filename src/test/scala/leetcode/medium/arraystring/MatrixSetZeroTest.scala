@@ -1,8 +1,8 @@
 package leetcode.medium.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MatrixSetZeroTest extends FunSuite {
+class MatrixSetZeroTest extends AnyFunSuite {
   test("[1,1,1], [1,0,1], [1,1,1]") {
     val matrix = Array(
       Array(1, 1, 1),

@@ -1,8 +1,8 @@
 package leetcode.medium.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class UniquePathsTest extends FunSuite {
+class UniquePathsTest extends AnyFunSuite {
   test("3,2") {
     assert(UniquePaths.uniquePaths(3, 2) == 3)
   }

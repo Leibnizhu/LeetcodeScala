@@ -1,8 +1,8 @@
 package leetcode.medium.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LongestPalindromeTest extends FunSuite {
+class LongestPalindromeTest extends AnyFunSuite {
   test("babad") {
     val result = LongestPalindrome.longestPalindrome("babad")
     assert(result.equals("bab") || result.equals("aba"))

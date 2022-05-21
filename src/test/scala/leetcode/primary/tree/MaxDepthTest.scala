@@ -1,9 +1,9 @@
 package leetcode.primary.tree
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxDepthTest extends FunSuite {
+class MaxDepthTest extends AnyFunSuite {
 
   test("3,9,20,null,null,15,7") {
     check(Array[Integer](3,9,20,null,null,15,7), 3)

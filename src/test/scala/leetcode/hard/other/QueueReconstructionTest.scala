@@ -1,8 +1,8 @@
 package leetcode.hard.other
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class QueueReconstructionTest extends FunSuite {
+class QueueReconstructionTest extends AnyFunSuite {
   test("sample1") {
     check(Array(Array(7, 0), Array(4, 4), Array(7, 1), Array(5, 0), Array(6, 1), Array(5, 2)),
       Array(Array(5, 0), Array(7, 0), Array(5, 2), Array(6, 1), Array(4, 4), Array(7, 1)))

@@ -1,8 +1,8 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordSolitaireTest extends FunSuite {
+class WordSolitaireTest extends AnyFunSuite {
   /**
     * 输入:
     * beginWord = "hit",

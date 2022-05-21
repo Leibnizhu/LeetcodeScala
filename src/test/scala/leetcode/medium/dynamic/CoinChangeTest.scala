@@ -1,8 +1,8 @@
 package leetcode.medium.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CoinChangeTest extends FunSuite{
+class CoinChangeTest extends AnyFunSuite{
   test("[1,2,5], 11"){
     assert(CoinChange.coinChange(Array(1,2,5), 11) == 3)
   }

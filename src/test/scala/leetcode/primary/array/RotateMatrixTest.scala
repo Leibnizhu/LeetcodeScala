@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RotateMatrixTest extends FunSuite {
+class RotateMatrixTest extends AnyFunSuite {
   /**
     * 给定 matrix =
     * [

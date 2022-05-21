@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class HammingWeightTest extends FunSuite{
+class HammingWeightTest extends AnyFunSuite{
     test("11"){
       val ham = new HammingWeight()
       assert(ham.hammingWeight(11) == 3)

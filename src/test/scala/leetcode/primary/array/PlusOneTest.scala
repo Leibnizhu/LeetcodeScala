@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PlusOneTest extends FunSuite{
+class PlusOneTest extends AnyFunSuite{
   test("[1,2,3]"){
     val nums = Array(1,2,3)
     val result = PlusOne.plusOne(nums)

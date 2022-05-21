@@ -1,8 +1,8 @@
 package leetcode.hard.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LRUCacheTest extends FunSuite {
+class LRUCacheTest extends AnyFunSuite {
   test("sample1") {
     var cache = new LRUCache(2)
     cache.put(1, 1)

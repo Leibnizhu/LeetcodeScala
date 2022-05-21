@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TrailingZeroesTest extends FunSuite{
+class TrailingZeroesTest extends AnyFunSuite{
   test("3"){
     assert(TrailingZeroes.trailingZeroes(3) == 0)
   }

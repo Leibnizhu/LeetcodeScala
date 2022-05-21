@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ContainsDuplicateTest extends FunSuite{
+class ContainsDuplicateTest extends AnyFunSuite{
   test("[1,2,3,1]"){
     val nums = Array(1,2,3,1)
     val result = ContainsDuplicate.containsDuplicate(nums)

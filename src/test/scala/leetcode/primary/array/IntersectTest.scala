@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IntersectTest extends FunSuite{
+class IntersectTest extends AnyFunSuite{
   test("[1, 2, 2, 1], [2, 2]"){
     val nums1 = Array(1, 2, 2, 1)
     val nums2 = Array(2, 2)

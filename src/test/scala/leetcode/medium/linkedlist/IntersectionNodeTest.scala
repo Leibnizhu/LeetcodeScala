@@ -1,9 +1,9 @@
 package leetcode.medium.linkedlist
 
 import leetcode.primary.linkedlist.DeleteNode.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IntersectionNodeTest extends FunSuite {
+class IntersectionNodeTest extends AnyFunSuite {
   /**
     * 下面的两个链表：
     *

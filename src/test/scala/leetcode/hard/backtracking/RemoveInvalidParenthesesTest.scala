@@ -1,8 +1,8 @@
 package leetcode.hard.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RemoveInvalidParenthesesTest extends FunSuite {
+class RemoveInvalidParenthesesTest extends AnyFunSuite {
   test("()())()") {
     assert(RemoveInvalidParentheses.removeInvalidParentheses("()())()").sorted == List("()()()", "(())()").sorted)
   }

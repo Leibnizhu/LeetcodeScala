@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SingleNumberTest  extends FunSuite{
+class SingleNumberTest  extends AnyFunSuite{
   test("[2,2,1]"){
     val nums = Array(2,2,1)
     val result = SingleNumber.singleNumber(nums)

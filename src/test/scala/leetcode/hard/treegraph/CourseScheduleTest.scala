@@ -1,8 +1,8 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CourseScheduleTest extends FunSuite {
+class CourseScheduleTest extends AnyFunSuite {
   test("2, [[1,0]]") {
     assert(CourseSchedule.canFinish(2, Array(Array(1, 0))))
   }

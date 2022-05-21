@@ -1,8 +1,8 @@
 package leetcode.primary.linkedlist
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class DeleteNodeTest extends FunSuite {
+class DeleteNodeTest extends AnyFunSuite {
 
   test("1 -> 2 -> 3 -> 4 , delete 3") {
     val node4 = new DeleteNode.ListNode(4)

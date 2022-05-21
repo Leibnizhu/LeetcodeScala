@@ -1,9 +1,9 @@
 package leetcode.medium.treegraph
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class KthSmallestTest extends FunSuite {
+class KthSmallestTest extends AnyFunSuite {
   test("[3,1,4,null,2], 1") {
     assert(KthSmallest.kthSmallest(TreeNode(Array[Integer](3, 1, 4, null, 2)), 1) == 1)
   }

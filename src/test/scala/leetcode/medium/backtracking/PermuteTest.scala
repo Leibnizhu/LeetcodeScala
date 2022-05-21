@@ -1,8 +1,8 @@
 package leetcode.medium.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PermuteTest extends FunSuite{
+class PermuteTest extends AnyFunSuite{
   test("1,2,3"){
     val result = Permute.permute(Array(1,2,3))
     println(result)

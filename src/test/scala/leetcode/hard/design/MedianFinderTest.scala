@@ -1,8 +1,8 @@
 package leetcode.hard.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MedianFinderTest extends FunSuite {
+class MedianFinderTest extends AnyFunSuite {
   test("sample1") {
     val finder = new MedianFinder
     finder.addNum(1)

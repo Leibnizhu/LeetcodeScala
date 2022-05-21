@@ -1,11 +1,11 @@
 package leetcode.medium.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
 import scala.collection.mutable.ListBuffer
 import scala.util.Random
 
-class LongestIncreasingSubSeqTest extends FunSuite {
+class LongestIncreasingSubSeqTest extends AnyFunSuite {
   test("10,9,2,5,3,7,101,18") {
     assert(LongestIncreasingSubSeq.lengthOfLIS(Array(10, 9, 2, 5, 3, 7, 101, 18)) == 4)
   }

@@ -1,8 +1,8 @@
 package leetcode.medium.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TaskSchedulerTest extends FunSuite {
+class TaskSchedulerTest extends AnyFunSuite {
   test("[A,A,A,B,B,B], n = 2") {
     assert(TaskScheduler.leastInterval("AAABBB".toCharArray, 2) == 8)
   }

@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PokeBalloonTest extends FunSuite {
+class PokeBalloonTest extends AnyFunSuite {
   test("3") {
     assert(PokeBalloon.maxCoins(Array(3)) == 3)
   }

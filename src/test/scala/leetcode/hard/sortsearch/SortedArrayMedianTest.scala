@@ -1,8 +1,8 @@
 package leetcode.hard.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SortedArrayMedianTest extends FunSuite {
+class SortedArrayMedianTest extends AnyFunSuite {
   test("sample1") {
     assert(SortedArrayMedian.findMedianSortedArrays(Array(1, 3), Array(2)) == 2)
   }

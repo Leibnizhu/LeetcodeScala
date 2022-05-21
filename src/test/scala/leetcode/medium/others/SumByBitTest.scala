@@ -1,8 +1,8 @@
 package leetcode.medium.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SumByBitTest extends FunSuite {
+class SumByBitTest extends AnyFunSuite {
   test("1,2") {
     assert(SumByBit.getSum(1, 2) == 3)
   }

@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FindPeakElementTest extends FunSuite{
+class FindPeakElementTest extends AnyFunSuite{
   test("1,2,3,1"){
     val res = FindPeakElement.findPeakElement(Array(1,2,3,1))
     assert(res == 2)

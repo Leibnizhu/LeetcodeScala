@@ -1,8 +1,8 @@
 package leetcode.medium.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ReversePolishNotationTest extends FunSuite {
+class ReversePolishNotationTest extends AnyFunSuite {
   test("((2 + 1) * 3) = 9") {
     assert(ReversePolishNotation.evalRPN(Array("2", "1", "+", "3", "*")) == 9)
   }

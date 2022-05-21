@@ -1,8 +1,8 @@
 package leetcode.primary.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxSubArrayTest extends FunSuite{
+class MaxSubArrayTest extends AnyFunSuite{
   /**
     * 输入: [-2,1,-3,4,-1,2,1,-5,4],
     * 输出: 6

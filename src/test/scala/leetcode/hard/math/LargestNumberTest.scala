@@ -1,8 +1,8 @@
 package leetcode.hard.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LargestNumberTest extends FunSuite {
+class LargestNumberTest extends AnyFunSuite {
   test("10,2") {
     assert(LargestNumber.largestNumber(Array(10, 2)) == "210")
     assert(LargestNumber.largestNumber(Array(2, 10)) == "210")

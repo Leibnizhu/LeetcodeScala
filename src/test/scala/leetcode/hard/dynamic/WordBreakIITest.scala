@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordBreakIITest extends FunSuite {
+class WordBreakIITest extends AnyFunSuite {
   test("sample1") {
     val res = WordBreakII.wordBreak("catsanddog", List("cat", "cats", "and", "sand", "dog"))
     assert(res.sorted == List("cats and dog", "cat sand dog").sorted)
@@ -15,6 +15,6 @@ class WordBreakIITest extends FunSuite {
 
   test("sample3") {
     val res = WordBreakII.wordBreak("catsandog", List("cats", "dog", "sand", "and", "cat"))
-    assert(res isEmpty)
+    assert(res.isEmpty)
   }
 }

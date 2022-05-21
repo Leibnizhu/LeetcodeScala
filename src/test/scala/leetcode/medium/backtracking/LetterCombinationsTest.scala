@@ -1,8 +1,8 @@
 package leetcode.medium.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LetterCombinationsTest extends FunSuite{
+class LetterCombinationsTest extends AnyFunSuite{
   test("23"){
     val result = LetterCombinations.letterCombinations("23")
     println(result)

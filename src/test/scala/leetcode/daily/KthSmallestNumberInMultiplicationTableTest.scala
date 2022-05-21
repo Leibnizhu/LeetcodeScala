@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class KthSmallestNumberInMultiplicationTableTest extends FunSuite {
+class KthSmallestNumberInMultiplicationTableTest extends AnyFunSuite {
   test("case1") {
     assertResult(3)(KthSmallestNumberInMultiplicationTable.findKthNumber(3, 3, 5))
   }

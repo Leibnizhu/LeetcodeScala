@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ReverseIntegerTest extends FunSuite {
+class ReverseIntegerTest extends AnyFunSuite {
 
   test("123") {
     check(123, 321)

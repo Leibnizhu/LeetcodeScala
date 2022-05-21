@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SearchRotatedSortedArrayTest extends FunSuite {
+class SearchRotatedSortedArrayTest extends AnyFunSuite {
   test("[4,5,6,7,0,1,2], target = 0") {
     assert(SearchRotatedSortedArray.search(Array(4, 5, 6, 7, 0, 1, 2), 0) == 4)
   }

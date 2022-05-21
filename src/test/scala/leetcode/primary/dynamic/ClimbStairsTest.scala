@@ -1,8 +1,8 @@
 package leetcode.primary.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ClimbStairsTest extends FunSuite{
+class ClimbStairsTest extends AnyFunSuite{
   test("1"){
     assert(ClimbStairs.climbStairs(1) == 1)
   }

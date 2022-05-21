@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordBreakTest extends FunSuite {
+class WordBreakTest extends AnyFunSuite {
   test("leetcode 可以被拆分成 leet code") {
     assert(WordBreak.wordBreak("leetcode", List("leet", "code")))
   }

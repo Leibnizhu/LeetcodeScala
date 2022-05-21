@@ -15,7 +15,7 @@ object StickersToSpellWord {
     */
   def minStickers(stickers: Array[String], target: String): Int = {
     def wc(str: String): immutable.Map[Char, Int] =
-      str.toCharArray.groupBy(c => c).mapValues(s => s.length)
+      str.toCharArray.groupBy(c => c).transform((k,v) => v.length)
 
     def canSpell(stickerWc: Array[immutable.Map[Char, Int]], n: Int, targetWc: immutable.Map[Char, Int]): Boolean =
       targetWc.keySet.subsetOf(stickerWc.take(n).map(_.keySet).foldLeft(Set[Char]())((s, e) => s ++ e))

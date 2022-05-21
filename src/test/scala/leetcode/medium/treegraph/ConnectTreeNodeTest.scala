@@ -1,9 +1,9 @@
 package leetcode.medium.treegraph
 
 import leetcode.medium.treegraph.ConnectTreeNode.TreeLinkNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ConnectTreeNodeTest extends FunSuite{
+class ConnectTreeNodeTest extends AnyFunSuite{
     test("3 level perfect binary tree"){
       val node4 = new TreeLinkNode(4)
       val node5 = new TreeLinkNode(5)

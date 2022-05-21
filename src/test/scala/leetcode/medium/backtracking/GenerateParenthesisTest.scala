@@ -1,8 +1,8 @@
 package leetcode.medium.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class GenerateParenthesisTest extends FunSuite {
+class GenerateParenthesisTest extends AnyFunSuite {
   test("0") {
     check(0, List())
   }

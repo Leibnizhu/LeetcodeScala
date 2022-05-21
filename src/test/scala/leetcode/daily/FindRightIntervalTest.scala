@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FindRightIntervalTest extends FunSuite {
+class FindRightIntervalTest extends AnyFunSuite {
   test("case1") {
     assertResult(Array(-1))(FindRightInterval.findRightInterval(Array(Array(1, 2))))
   }

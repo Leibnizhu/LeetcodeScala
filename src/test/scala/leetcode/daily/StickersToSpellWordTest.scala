@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class StickersToSpellWordTest extends FunSuite {
+class StickersToSpellWordTest extends AnyFunSuite {
   test("case1") {
     assertResult(3)(StickersToSpellWord.minStickers(Array("with", "example", "science"), "thehat"))
   }

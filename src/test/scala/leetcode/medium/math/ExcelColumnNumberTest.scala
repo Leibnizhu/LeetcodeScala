@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ExcelColumnNumberTest extends FunSuite{
+class ExcelColumnNumberTest extends AnyFunSuite{
   test("A"){
     assert(ExcelColumnNumber.titleToNumber("A") == 1)
   }

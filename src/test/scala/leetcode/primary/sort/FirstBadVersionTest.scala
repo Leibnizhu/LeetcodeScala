@@ -1,8 +1,8 @@
 package leetcode.primary.sort
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FirstBadVersionTest extends FunSuite {
+class FirstBadVersionTest extends AnyFunSuite {
   test("total 5, first bad in 4") {
     val version = new FirstBadVersion(4)
     assert(version.firstBadVersion(5) == 4)

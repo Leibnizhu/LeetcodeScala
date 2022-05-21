@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class VerifyingAnAlienDictionaryTest extends FunSuite {
+class VerifyingAnAlienDictionaryTest extends AnyFunSuite {
   test("case1") {
     assertResult(true)(VerifyingAnAlienDictionary.isAlienSorted(Array("hello", "leetcode"), "hlabcdefgijkmnopqrstuvwxyz"))
   }

@@ -1,8 +1,8 @@
 package leetcode.primary.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RobTest extends FunSuite {
+class RobTest extends AnyFunSuite {
   /**
     * 输入: [1,2,3,1]
     * 输出: 4

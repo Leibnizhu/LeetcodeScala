@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SpiralMatrixTest extends FunSuite {
+class SpiralMatrixTest extends AnyFunSuite {
   test("empty") {
     assert(SpiralMatrix.spiralOrder(Array()) == List())
   }

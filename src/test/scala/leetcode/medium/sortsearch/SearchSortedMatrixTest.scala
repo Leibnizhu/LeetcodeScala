@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SearchSortedMatrixTest extends FunSuite {
+class SearchSortedMatrixTest extends AnyFunSuite {
   val sample = Array(
     Array(1, 4, 7, 11, 15),
     Array(2, 5, 8, 12, 19),

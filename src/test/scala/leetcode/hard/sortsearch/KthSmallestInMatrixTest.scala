@@ -1,8 +1,8 @@
 package leetcode.hard.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class KthSmallestInMatrixTest extends FunSuite {
+class KthSmallestInMatrixTest extends AnyFunSuite {
   test("sample1") {
     assert(KthSmallestInMatrix.kthSmallest(Array(
       Array(1, 5, 9),

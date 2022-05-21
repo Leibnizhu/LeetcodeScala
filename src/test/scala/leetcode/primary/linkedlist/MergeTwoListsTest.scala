@@ -1,9 +1,9 @@
 package leetcode.primary.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MergeTwoListsTest extends FunSuite {
+class MergeTwoListsTest extends AnyFunSuite {
 
   test("1->2->4, 1->3->4") {
     check(Array(1, 2, 4), Array(1, 3, 4), Array(1, 1, 2, 3, 4, 4))

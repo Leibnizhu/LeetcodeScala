@@ -1,9 +1,9 @@
 package leetcode.medium.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class AddTwoNumbersTest extends FunSuite {
+class AddTwoNumbersTest extends AnyFunSuite {
   test("(2 -> 4 -> 3) + (5 -> 6 -> 4)") {
     check(Array(2, 4, 3), Array(5, 6, 4), 3, Array(7, 0, 8))
   }

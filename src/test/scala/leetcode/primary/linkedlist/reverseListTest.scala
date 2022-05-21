@@ -1,9 +1,9 @@
 package leetcode.primary.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class reverseListTest extends FunSuite {
+class reverseListTest extends AnyFunSuite {
 
   test("1->2->3->4->5") {
     check(Array(1, 2, 3, 4, 5), Array(5, 4, 3, 2, 1))

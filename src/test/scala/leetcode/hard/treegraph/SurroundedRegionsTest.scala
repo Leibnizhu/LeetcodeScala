@@ -1,8 +1,8 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SurroundedRegionsTest extends FunSuite {
+class SurroundedRegionsTest extends AnyFunSuite {
   test("empty") {
     val board = Array[Array[Char]]()
     SurroundedRegions.solve(board)

@@ -1,8 +1,8 @@
 package leetcode.primary.linkedlist
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class HasCycleTest extends FunSuite {
+class HasCycleTest extends AnyFunSuite {
   test("1->2") {
     check(Array(1, 2), cycle = false, shouldBe = false)
   }

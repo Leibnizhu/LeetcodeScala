@@ -1,8 +1,8 @@
 package leetcode.medium.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class BinarySearchTreeCodecTest extends FunSuite {
+class BinarySearchTreeCodecTest extends AnyFunSuite {
   test("serialize-sample1") {
     val l = new BinarySearchTreeCodec.BSTNode(1)
     val r = new BinarySearchTreeCodec.BSTNode(3)

@@ -1,8 +1,8 @@
 package leetcode.medium.sortsearch
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SearchRangeTest extends FunSuite{
+class SearchRangeTest extends AnyFunSuite{
   test("[5,7,7,8,8,10], 8"){
     assert(SearchRange.searchRange(Array(5,7,7,8,8,10), 8) sameElements Array(3,4))
   }

@@ -1,8 +1,8 @@
 package leetcode.primary.array
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IsValidSudokuTest extends FunSuite {
+class IsValidSudokuTest extends AnyFunSuite {
   /**
     * 输入:
     * [

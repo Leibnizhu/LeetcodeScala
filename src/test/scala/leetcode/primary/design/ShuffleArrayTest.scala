@@ -1,8 +1,8 @@
 package leetcode.primary.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ShuffleArrayTest extends FunSuite {
+class ShuffleArrayTest extends AnyFunSuite {
   test("1,2,3 shuffle"){
     val arr = Array(1,2,3)
     val shuffle = new ShuffleArray(arr)

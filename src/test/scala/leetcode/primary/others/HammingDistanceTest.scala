@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class HammingDistanceTest extends FunSuite{
+class HammingDistanceTest extends AnyFunSuite{
   test("1,4"){
     assert(HammingDistance.hammingDistance(1,4) == 2)
   }

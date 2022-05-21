@@ -1,8 +1,8 @@
 package leetcode.hard.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PerfectSquaresTest extends FunSuite {
+class PerfectSquaresTest extends AnyFunSuite {
   test("1 = 1") {
     assert(PerfectSquares.numSquares(1) == 1)
   }

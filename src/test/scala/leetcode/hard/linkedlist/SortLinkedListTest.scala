@@ -1,9 +1,9 @@
 package leetcode.hard.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SortLinkedListTest extends FunSuite {
+class SortLinkedListTest extends AnyFunSuite {
 
   def check(arr: Array[Int], shouldBe: Array[Int]): Unit = {
     val head = ListNode.fromArray(arr)

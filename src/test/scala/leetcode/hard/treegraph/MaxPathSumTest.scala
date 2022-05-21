@@ -1,9 +1,9 @@
 package leetcode.hard.treegraph
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxPathSumTest extends FunSuite {
+class MaxPathSumTest extends AnyFunSuite {
   test("1,2,3") {
     val root = TreeNode(Array[Integer](1, 2, 3))
     assert(MaxPathSum.maxPathSum(root) == 6)

@@ -1,8 +1,8 @@
 package leetcode.hard.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordSearchIITest extends FunSuite {
+class WordSearchIITest extends AnyFunSuite {
   test("sample1") {
     val board = Array(
       Array('o', 'a', 'a', 'n'),

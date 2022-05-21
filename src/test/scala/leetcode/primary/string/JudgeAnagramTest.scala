@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class JudgeAnagramTest extends FunSuite {
+class JudgeAnagramTest extends AnyFunSuite {
 
   test("anagram,nagaram") {
     check("anagram", "nagaram",shouldBe = true)

@@ -1,8 +1,8 @@
 package leetcode.hard.other
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SkyLineTest extends FunSuite {
+class SkyLineTest extends AnyFunSuite {
   test("sample1") {
     check(Array(Array(2, 9, 10), Array(3, 7, 15), Array(5, 12, 12), Array(15, 20, 10), Array(19, 24, 8)),
       List(Array(2, 10), Array(3, 15), Array(7, 12), Array(12, 0), Array(15, 10), Array(20, 8), Array(24, 0)))

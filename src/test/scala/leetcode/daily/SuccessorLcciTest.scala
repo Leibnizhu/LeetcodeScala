@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SuccessorLcciTest extends FunSuite {
+class SuccessorLcciTest extends AnyFunSuite {
   test("case1") {
     val root = new SuccessorLcci.TreeNode(2)
     val l = new SuccessorLcci.TreeNode(1)

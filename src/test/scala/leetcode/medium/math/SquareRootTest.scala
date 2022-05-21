@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SquareRootTest extends FunSuite {
+class SquareRootTest extends AnyFunSuite {
   test("4") {
     assert(SquareRoot.mySqrt(4) == 2)
   }

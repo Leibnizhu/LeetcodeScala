@@ -1,8 +1,8 @@
 package leetcode.hard.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PalindromePartitioningTest extends FunSuite {
+class PalindromePartitioningTest extends AnyFunSuite {
   test("aab") {
     assert(PalindromePartitioning.partition("aab") ==
       List(List("aa", "b"), List("a", "a", "b")))

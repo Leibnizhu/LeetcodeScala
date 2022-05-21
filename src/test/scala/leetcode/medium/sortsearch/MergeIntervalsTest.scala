@@ -1,9 +1,9 @@
 package leetcode.medium.sortsearch
 
 import leetcode.common.Interval
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MergeIntervalsTest extends FunSuite {
+class MergeIntervalsTest extends AnyFunSuite {
   test("[1,3],[2,6],[8,10],[15,18]") {
     val intervals = List(Interval(1, 3), Interval(2, 6), Interval(8, 10), Interval(15, 18))
     val result = MergeIntervals.merge(intervals)

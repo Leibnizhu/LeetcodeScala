@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MinimumMovesToEqualArrayElementsIiTest extends FunSuite {
+class MinimumMovesToEqualArrayElementsIiTest extends AnyFunSuite {
   test("case1") {
     assertResult(2)(MinimumMovesToEqualArrayElementsIi.minMoves2(Array(1, 2, 3)))
   }

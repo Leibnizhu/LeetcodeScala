@@ -1,8 +1,8 @@
 package leetcode.hard.linkedlist
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CopyRandomLinkedListTest extends FunSuite {
+class CopyRandomLinkedListTest extends AnyFunSuite {
   test("1->2->3"){
     val p1 = new CopyRandomLinkedList.RandomListNode(1)
     val p2 = new CopyRandomLinkedList.RandomListNode(2)

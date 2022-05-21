@@ -1,8 +1,8 @@
 package leetcode.medium.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RandomizedSetTest extends FunSuite{
+class RandomizedSetTest extends AnyFunSuite{
   test("sample"){
     // 初始化一个空的集合。
     val set = new RandomizedSet()

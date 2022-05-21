@@ -1,9 +1,9 @@
 package leetcode.primary.tree
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SortedArrayToBSTTest extends FunSuite{
+class SortedArrayToBSTTest extends AnyFunSuite{
 
   /**
     * 给定有序数组: [-10,-3,0,5,9],

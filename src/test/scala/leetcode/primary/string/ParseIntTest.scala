@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ParseIntTest extends FunSuite {
+class ParseIntTest extends AnyFunSuite {
 
   test("42") {
     check("42",42)

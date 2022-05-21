@@ -1,8 +1,8 @@
 package leetcode.primary.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IsPowerOfThreeTest extends FunSuite{
+class IsPowerOfThreeTest extends AnyFunSuite{
   test("27"){
     assert(IsPowerOfThree.isPowerOfThree(27))
   }

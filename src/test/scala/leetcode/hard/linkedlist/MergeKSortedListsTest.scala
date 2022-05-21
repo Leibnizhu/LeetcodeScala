@@ -1,9 +1,9 @@
 package leetcode.hard.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MergeKSortedListsTest extends FunSuite {
+class MergeKSortedListsTest extends AnyFunSuite {
   test("sample1, k=3") {
     val l1 = ListNode.fromArray(Array(1, 4, 5))
     val l2 = ListNode.fromArray(Array(1, 3, 4))

@@ -1,8 +1,8 @@
 package leetcode.primary.sort
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MergeTwoSortedArrayTest extends FunSuite{
+class MergeTwoSortedArrayTest extends AnyFunSuite{
   /**
     * 输入:
     * nums1 = [1,2,3,0,0,0], m = 3

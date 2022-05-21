@@ -1,8 +1,8 @@
 package leetcode.medium.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class DivideTwoTest extends FunSuite {
+class DivideTwoTest extends AnyFunSuite {
   test("10 / 3") {
     assert(DivideTwo.divide(10, 3) == 3)
   }

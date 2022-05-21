@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MaxAreaTest extends FunSuite{
+class MaxAreaTest extends AnyFunSuite{
   test("1,2"){
     assert(MaxArea.maxArea(Array(1,2)) == 1)
   }

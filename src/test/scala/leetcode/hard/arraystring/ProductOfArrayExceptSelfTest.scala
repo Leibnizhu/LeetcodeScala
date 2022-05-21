@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ProductOfArrayExceptSelfTest extends FunSuite {
+class ProductOfArrayExceptSelfTest extends AnyFunSuite {
   test("3,4") {
     assert(ProductOfArrayExceptSelf.productExceptSelf(Array(3, 4)) sameElements Array(4, 3))
   }

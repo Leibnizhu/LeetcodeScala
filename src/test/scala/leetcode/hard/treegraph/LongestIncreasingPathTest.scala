@@ -1,8 +1,8 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LongestIncreasingPathTest extends FunSuite {
+class LongestIncreasingPathTest extends AnyFunSuite {
   /**
     * 解释: 最长递增路径为 [1, 2, 6, 9]。
     */

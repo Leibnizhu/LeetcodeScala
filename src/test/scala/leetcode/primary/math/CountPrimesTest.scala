@@ -1,8 +1,8 @@
 package leetcode.primary.math
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CountPrimesTest extends FunSuite{
+class CountPrimesTest extends AnyFunSuite{
 
   /**
     * 输入: 10

@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CellularAutomataTest extends FunSuite {
+class CellularAutomataTest extends AnyFunSuite {
   test("sample1") {
     val board = Array(
       Array(0, 1, 0),

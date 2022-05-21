@@ -1,9 +1,9 @@
 package leetcode.medium.linkedlist
 
 import leetcode.common.ListNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class OddEvenListTest extends FunSuite{
+class OddEvenListTest extends AnyFunSuite{
 
   test("1->2->3->4->5"){
     check(Array(1,2,3,4,5),Array(1,3,5,2,4))

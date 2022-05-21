@@ -1,8 +1,8 @@
 package leetcode.medium.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ThreeSumTest extends FunSuite {
+class ThreeSumTest extends AnyFunSuite {
   test("-1 0 1 2 -1 -4") {
     val result = ThreeSum.threeSum(Array(-1, 0, 1, 2, -1, -4))
     assert(result.length == 2)

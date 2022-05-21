@@ -1,10 +1,10 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RightSmallerCountTest extends FunSuite {
+class RightSmallerCountTest extends AnyFunSuite {
   test("empty") {
-    assert(RightSmallerCount.countSmaller(Array[Int]()) isEmpty)
+    assert(RightSmallerCount.countSmaller(Array[Int]()).isEmpty)
   }
 
   test("one element") {

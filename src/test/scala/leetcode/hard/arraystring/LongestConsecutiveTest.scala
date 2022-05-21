@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LongestConsecutiveTest extends FunSuite {
+class LongestConsecutiveTest extends AnyFunSuite {
   test("null") {
     assert(LongestConsecutive.longestConsecutive(null) == 0)
   }

@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class IsValidBracketsTest extends FunSuite{
+class IsValidBracketsTest extends AnyFunSuite{
   test("()"){
     assert(IsValidBrackets.isValid("()"))
   }

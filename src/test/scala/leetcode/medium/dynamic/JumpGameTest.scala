@@ -1,8 +1,8 @@
 package leetcode.medium.dynamic
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class JumpGameTest extends FunSuite {
+class JumpGameTest extends AnyFunSuite {
   test("2,3,1,1,4") {
     assert(JumpGame.canJump(Array(2, 3, 1, 1, 4)))
   }

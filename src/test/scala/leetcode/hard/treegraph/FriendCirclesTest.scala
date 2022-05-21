@@ -1,8 +1,8 @@
 package leetcode.hard.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FriendCirclesTest extends FunSuite {
+class FriendCirclesTest extends AnyFunSuite {
   /**
     * 输入:
     * [[1,1,0],

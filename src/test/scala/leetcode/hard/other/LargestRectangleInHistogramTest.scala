@@ -1,8 +1,8 @@
 package leetcode.hard.other
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LargestRectangleInHistogramTest extends FunSuite {
+class LargestRectangleInHistogramTest extends AnyFunSuite {
   test("sample1") {
     assert(LargestRectangleInHistogram.largestRectangleArea(Array(2, 1, 5, 6, 2, 3)) == 10)
   }

@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LongestCommonPrefixTest extends FunSuite {
+class LongestCommonPrefixTest extends AnyFunSuite {
 
   test("flower,flow,flight") {
     check(Array("flower","flow","flight"), "fl")

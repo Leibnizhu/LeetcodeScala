@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class OneAwayLcciTest extends FunSuite {
+class OneAwayLcciTest extends AnyFunSuite {
   test("case1") {
     assert(OneAwayLcci.oneEditAway("pale", "ple"))
   }

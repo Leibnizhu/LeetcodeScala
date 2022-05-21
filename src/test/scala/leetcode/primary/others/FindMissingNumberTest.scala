@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class FindMissingNumberTest extends FunSuite{
+class FindMissingNumberTest extends AnyFunSuite{
   test("3,0,1"){
     assert(FindMissingNumber.missingNumber(Array(3,0,1)) == 2)
   }

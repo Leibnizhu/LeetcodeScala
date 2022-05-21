@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MinimumWindowSubstringTest extends FunSuite{
+class MinimumWindowSubstringTest extends AnyFunSuite{
   test("S = ADOBECODEBANC, T = ABC"){
     assert(MinimumWindowSubstring.minWindow("ADOBECODEBANC", "ABC") == "BANC")
   }

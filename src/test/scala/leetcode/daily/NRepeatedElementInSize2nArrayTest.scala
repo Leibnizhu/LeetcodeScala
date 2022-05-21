@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class NRepeatedElementInSize2nArrayTest extends FunSuite {
+class NRepeatedElementInSize2nArrayTest extends AnyFunSuite {
   test("case1") {
     assertResult(3)(NRepeatedElementInSize2nArray.repeatedNTimes(Array(1, 2, 3, 3)))
   }

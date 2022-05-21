@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class PascalTriangleTest extends FunSuite{
+class PascalTriangleTest extends AnyFunSuite{
   test("1"){
     val result = PascalTriangle.generate(1)
     result.foreach(println(_))

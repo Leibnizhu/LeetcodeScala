@@ -1,8 +1,8 @@
 package leetcode.hard.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class SlidingWindowMaximumTest extends FunSuite {
+class SlidingWindowMaximumTest extends AnyFunSuite {
   test("null, k = 3") {
     assert(SlidingWindowMaximum.maxSlidingWindow(null, 3) sameElements Array[Int]())
   }

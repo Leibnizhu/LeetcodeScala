@@ -1,8 +1,8 @@
 package leetcode.medium.treegraph
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class NumberOfIslandsTest extends FunSuite {
+class NumberOfIslandsTest extends AnyFunSuite {
   test("sample 1") {
     assert(NumberOfIslands.numIslands(Array(
       Array('1', '1', '1', '1', '0'),

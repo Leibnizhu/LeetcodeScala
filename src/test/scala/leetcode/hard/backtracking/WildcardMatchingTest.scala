@@ -1,8 +1,8 @@
 package leetcode.hard.backtracking
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class WildcardMatchingTest extends FunSuite {
+class WildcardMatchingTest extends AnyFunSuite {
   test("a 无法匹配 aa 整个字符串。") {
     assert(!WildcardMatching.isMatch("aa", "a"))
   }

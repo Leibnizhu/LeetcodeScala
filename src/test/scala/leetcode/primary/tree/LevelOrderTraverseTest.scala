@@ -1,9 +1,9 @@
 package leetcode.primary.tree
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LevelOrderTraverseTest extends FunSuite{
+class LevelOrderTraverseTest extends AnyFunSuite{
   /**
   *     1
   *    / \

@@ -1,8 +1,8 @@
 package leetcode.primary.others
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ReverseBitsTest extends FunSuite{
+class ReverseBitsTest extends AnyFunSuite{
   test("43261596"){
     val reverse = new ReverseBits()
     assert(reverse.reverseBits(43261596) == 964176192)

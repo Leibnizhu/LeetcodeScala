@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ReverseStringTest extends FunSuite {
+class ReverseStringTest extends AnyFunSuite {
 
   test("hello") {
     val str = "hello"

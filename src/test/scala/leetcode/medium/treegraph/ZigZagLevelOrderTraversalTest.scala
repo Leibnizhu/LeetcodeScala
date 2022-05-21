@@ -1,9 +1,9 @@
 package leetcode.medium.treegraph
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ZigZagLevelOrderTraversalTest extends FunSuite {
+class ZigZagLevelOrderTraversalTest extends AnyFunSuite {
   test("3,9,20,null,null,15,7") {
     val root = TreeNode(Array[Integer](3, 9, 20, null, null, 15, 7))
     val result = ZigZagLevelOrderTraversal.zigzagLevelOrder(root)

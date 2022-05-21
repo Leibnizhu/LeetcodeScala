@@ -1,8 +1,8 @@
 package leetcode.primary.string
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class JudgePalindromeTest extends FunSuite {
+class JudgePalindromeTest extends AnyFunSuite {
 
   test("A man, a plan, a canal: Panama") {
     check("A man, a plan, a canal: Panama", shouldBe = true)

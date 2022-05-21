@@ -1,8 +1,8 @@
 package leetcode.medium.arraystring
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class LongestSubstringTest extends FunSuite{
+class LongestSubstringTest extends AnyFunSuite{
   test("abcabcbb"){
     assert(LongestSubstring.lengthOfLongestSubstring("abcabcbb") == 3)
   }

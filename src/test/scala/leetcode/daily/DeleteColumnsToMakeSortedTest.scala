@@ -1,8 +1,8 @@
 package leetcode.daily
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class DeleteColumnsToMakeSortedTest extends FunSuite {
+class DeleteColumnsToMakeSortedTest extends AnyFunSuite {
   test("cba,daf,ghi") {
     assert(DeleteColumnsToMakeSorted.minDeletionSize(Array("cba", "daf", "ghi")) == 1)
   }

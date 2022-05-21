@@ -1,10 +1,10 @@
 package leetcode.primary.tree
 
 import leetcode.common.TreeNode
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
 
-class IsValidBSTTEst extends FunSuite{
+class IsValidBSTTEst extends AnyFunSuite{
 
   /**
     *   2

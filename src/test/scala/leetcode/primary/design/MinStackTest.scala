@@ -1,8 +1,8 @@
 package leetcode.primary.design
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class MinStackTest extends FunSuite {
+class MinStackTest extends AnyFunSuite {
 
   /**
     * 官方例子
