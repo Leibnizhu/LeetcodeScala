@@ -20,7 +20,7 @@ object MinimumMovesToEqualArrayElementsIi {
     * 但其实不用完全排序，之前也做过第k个数的题，用类似快排思想即可，也可以最小堆
     */
   def minMoves2(nums: Array[Int]): Int = {
-    def findKthLargestByMinHeap(nums: Array[Int], k: Int): Int = {
+    /* def findKthLargestByMinHeap(nums: Array[Int], k: Int): Int = {
       val queue = mutable.PriorityQueue.empty(Ordering.by[Int, Int](p => p).reverse) //利用自带的最小堆
       for (num <- nums) {
         if (queue.size < k) {
@@ -31,8 +31,7 @@ object MinimumMovesToEqualArrayElementsIi {
         }
       }
       queue.head
-    }
-
+    } */
 
     def findKthLargestByQuickSort(nums: Array[Int], k: Int): Int = {
       def swap(i: Int, j: Int): Unit = {
@@ -74,7 +73,7 @@ object MinimumMovesToEqualArrayElementsIi {
       nums(left)
     }
 
-    def findKthLargestByScalaSort(nums: Array[Int], k: Int): Int = (nums.sorted).apply(k - 1)
+    // def findKthLargestByScalaSort(nums: Array[Int], k: Int): Int = (nums.sorted).apply(k - 1)
 
     val target = findKthLargestByQuickSort(nums, nums.length / 2 + 1)
     nums.map(n => math.abs(n - target)).sum
