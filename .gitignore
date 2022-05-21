@@ -139,3 +139,7 @@ target/
 .ensime
 project/build.properties
 .ensime_cache/
+
+.DS_Store
+**/.DS_Store
+.project

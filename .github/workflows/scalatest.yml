@@ -1,0 +1,25 @@
+name: Scala Tests
+
+on:
+  push:
+    branchs:
+      - master
+  pull_request:
+    branchs:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: sbt coverage test
+      - name: Coverage Report
+        run: sbt coverageReport
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true
+      - name: Format check
+        run: sbt scalastyle
