@@ -2,6 +2,7 @@
 [![Github Action Status](https://img.shields.io/github/workflow/status/Leibnizhu/LeetcodeScala/Scala%20Tests?color=green&label=actions&logo=github&logoColor=orange
 )](https://img.shields.io/github/workflow/status/Leibnizhu/LeetcodeScala/Scala%20Tests?color=green&label=actions&logo=github&logoColor=orange
 )
+[![codecov](https://codecov.io/gh/Leibnizhu/LeetcodeScala/branch/master/graph/badge.svg?token=MQJPM60YQT)](https://codecov.io/gh/Leibnizhu/LeetcodeScala)
 
 用Scala刷LeetCode,不过我进场的时候选错了,搞成中国版了,现在迁移不回去主站了.  
 自我感觉本仓库有以下优点:  
