@@ -16,7 +16,7 @@ jobs:
       - name: Run tests
         run: sbt coverage test
       - name: Coverage Report
-        run: 
+        run: sbt coverageReport
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
