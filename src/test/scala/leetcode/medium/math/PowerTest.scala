@@ -18,4 +18,12 @@ class PowerTest extends AnyFunSuite{
   test("1.00001, 123456"){
     assert(Power.myPow(1.00001, 123456) == 3.4368447520767935)
   }
+
+  test("-1.00001, 123456"){
+    assertResult(3.4368447520767935)(Power.myPow(-1.00001, 123456))
+  }
+
+  test("-1.00001, 0"){
+    assertResult(1)(Power.myPow(-1.00001, 0))
+  }
 }
