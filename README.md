@@ -3,7 +3,7 @@
 [![Github Action Status](https://github.com/Leibnizhu/LeetcodeScala/actions/workflows/scalatest.yml/badge.svg?branch=master)](https://github.com/Leibnizhu/LeetcodeScala/actions) 
 [![codecov](https://codecov.io/gh/Leibnizhu/LeetcodeScala/branch/master/graph/badge.svg?token=MQJPM60YQT)](https://codecov.io/gh/Leibnizhu/LeetcodeScala)  
 
-[![](https://www.codewars.com/kata/554ca54ffa7d91b236000023/train/scala)](https://www.codewars.com/users/Leibnizhu)
+[![CodeWars](https://www.codewars.com/users/Leibnizhu/badges/large)](https://www.codewars.com/users/Leibnizhu)
 
 用Scala刷LeetCode,不过我进场的时候选错了,搞成中国版了,现在迁移不回去主站了.  
 自我感觉本仓库有以下优点:  
