@@ -2,7 +2,7 @@ package leetcode.daily
 
 
 /**
-  * 2022-05-12
+  * 2022-05-24
   * {@see <a href='https://leetcode.cn/problems/univalued-binary-tree/'/> }
   */
 object UnivaluedBinaryTree {
