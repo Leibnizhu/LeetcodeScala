@@ -11,6 +11,7 @@ object Snail {
     * 画图推算:
     *  1. n=偶数时， min=n/2-round,max=n/2+round-1
     *     2. n=奇数时， min=n/2-round+1,max=n/2+round-1
+    *     整合为： min=(n+1)/2-round, max=n/2+round-1
     *     每圈拿的座标范围：
     *     (min, [min, max-1])
     *     ([min, max-1], max)
@@ -25,7 +26,7 @@ object Snail {
     */
   def snail(xs: List[List[Int]], round: Int): List[Int] = {
     val n = xs.size
-    val min = if (n % 2 == 0) n / 2 - round else n / 2 - round + 1
+    val min = (n + 1) / 2 - round
     val max = n / 2 + round - 1
     if (min == max) { //最中间一个round，即n=奇数时的round=1
       List(xs(min)(min))
