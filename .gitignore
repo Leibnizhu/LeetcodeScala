@@ -139,8 +139,14 @@ target/
 .ensime
 # project/build.properties
 project/target
+project/project
 .ensime_cache/
 
 .DS_Store
 **/.DS_Store
 .project
+.bsp
+.metals
+.ensime_cache
+.bloop
+.bsp/sbt.json
