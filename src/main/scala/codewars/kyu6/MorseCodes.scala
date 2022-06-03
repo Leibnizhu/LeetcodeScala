@@ -27,7 +27,9 @@ object MorseCodes {
     ".--" -> "W",
     "-..-" -> "X",
     "-.--" -> "Y",
-    "--.." -> "Z"
+    "--.." -> "Z",
+    "-.-.--" -> "!",
+    ".-.-.-" -> ".",
   )
 
   def morseCodes(msg: String): String = morseMap(msg)

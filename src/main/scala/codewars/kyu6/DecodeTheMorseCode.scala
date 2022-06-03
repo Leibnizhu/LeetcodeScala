@@ -8,7 +8,7 @@ object DecodeTheMorseCode {
   import MorseCodes.morseCodes
 
   def decode(msg: String) = msg.trim.split(" {3}")
-    .map(w => w.trim.split(" ").map(c=>if("···−−−···"==c)"SOS"else morseCodes(c)).mkString)
+    .map(w => w.trim.split(" ").map(c=>if("...---..."==c)"SOS"else morseCodes(c)).mkString)
     .mkString(" ")
 
 }

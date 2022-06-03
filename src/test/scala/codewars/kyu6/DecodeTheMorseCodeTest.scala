@@ -16,7 +16,7 @@ class DecodeTheMorseCodeTest extends AnyFlatSpec {
     assertResult("E E")(decode(" .   . "))
   }
 
-  "decode(      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-     )" should "return SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG" in {
-    assertResult("SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG")(decode("      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-     "))
+  "decode(      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-     )" should "return SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG." in {
+    assertResult("SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.")(decode("      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-     "))
   }
 }
