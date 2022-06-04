@@ -33,8 +33,7 @@ object GettingAlongWithIntegerPartitions {
     val res = memo(n.toInt - 1).toList.sorted
     val range = res.last - res.head
     val avg = res.map(_.toDouble).sum / res.size
-    val median = if (res.length % 2 == 1) res(res.length / 2).toDouble
-    else (res(res.length / 2 - 1).toDouble + res(res.length / 2)) / 2
-    s"Range: $range Average: ${"%.2f".format(avg)} Median: ${"%.2f".format(median)}"
+    val median = (res((res.length - 1) / 2) + res(res.length / 2)) / 2.0
+    f"Range: $range Average: $avg%.2f Median: $median%.2f"
   }
 }
