@@ -58,4 +58,6 @@ object MorseCodes {
     "..--.-"    -> "_"  ,
     "...---..." -> "SOS"
   )
+
+  val MORSE_CODE: Map[String, String] = morseCodes
 }
