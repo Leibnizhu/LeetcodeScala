@@ -97,6 +97,6 @@ object DecodeTheMorseCodeForReal {
   }
 
   def decodeMorse(morseCode: String): String = morseCode.trim.split(" {3}")
-    .map(w => w.trim.split(" ").map(MORSE_CODE).mkString)
+    .map(w => w.trim.split(" ").map(MORSE_CODE.getOrElse(_, "")).mkString)
     .mkString(" ")
 }

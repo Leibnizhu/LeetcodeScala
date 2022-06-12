@@ -12,6 +12,11 @@ class KPrimesTest extends AnyFlatSpec {
     testing(KPrimes.countKprimes(1, 2, 30), "2, 3, 5, 7, 11, 13, 17, 19, 23, 29")
     testing(KPrimes.countKprimes(8, 10000000, 10000200), "10000096, 10000152, 10000165, 10000200")
   }
+
+  it should "pass pazzle tests" in {
+    assertResult(1)(KPrimes.puzzle(138))
+    assertResult(2)(KPrimes.puzzle(143))
+  }
 }
 
 object KPrimesTest {
