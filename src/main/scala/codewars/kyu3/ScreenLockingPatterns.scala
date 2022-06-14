@@ -7,7 +7,7 @@ package codewars.kyu3
 object ScreenLockingPatterns {
   val cannotConnect: Set[(Int, Int)] = Set((0, 2), (3, 5), (6, 8), (0, 6), (1, 7), (2, 8), (0, 8), (2, 6))
 
-  def countPatternsFrom(f: Char, l: Int): Int = if (l <= 1) l else {
+  def countPatternsFrom(f: Char, l: Int): Int = if (l <= 1) l else if (l > 9) 0 else {
     val visited = Array.fill[Boolean](9)(false)
 
     //关于是否跨过，可以通过 (起点+终点)/2 == 中间点 评断
