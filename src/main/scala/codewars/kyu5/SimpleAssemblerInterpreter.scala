@@ -15,8 +15,8 @@ object SimpleAssemblerInterpreter {
       val command = program(ptr).split(" ")
       command match {
         case Array("mov", x, y) => ctx(x) = Try(y.toInt).getOrElse(ctx(y))
-        case Array("inc", x) => ctx(x) = ctx(x) + 1
-        case Array("dec", x) => ctx(x) = ctx(x) - 1
+        case Array("inc", x) => ctx(x) += 1
+        case Array("dec", x) => ctx(x) -= 1
         case Array("jnz", x, y) => if (Try(x.toInt).getOrElse(ctx(x)) != 0) ptr += (y.toInt - 1)
       }
       ptr += 1
