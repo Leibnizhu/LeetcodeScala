@@ -8,6 +8,8 @@ import java.math.BigInteger.{ONE, ZERO, valueOf}
   * {@see <a href='https://www.codewars.com/kata/54cb771c9b30e8b5250011d4/train/scala'/> }
   */
 object FabergeEasterEggsCrushTest {
+  //DP经典改编
+  //length(n, m) = C(m, 1) + ... + C(m, n)
   def height(n: BigInteger, m: BigInteger): BigInteger = if (m == ZERO || n == ZERO) ZERO else (1 to n.intValue())
     .foldLeft((ZERO, ONE))((res, i) => {
       val (curSum, prevCombine) = res
