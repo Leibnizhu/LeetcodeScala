@@ -20,12 +20,6 @@ object TheBooleanOrder {
     * 最后结果就是 dp(0)(str长度)._1
     */
   def solve(operands: String, operators: String): Long = {
-    def combine(t1: Long, f1: Long, t2: Long, f2: Long, op: Char): (Long, Long) = op match {
-      case '&' => (t1 * t2, t1 * f2 + t2 * f1 + f1 * f2)
-      case '|' => (t1 * f2 + t2 * f1 + t1 * t2, f1 * f2)
-      case '^' => (t1 * f2 + t2 * f1, t1 * t2 + f1 * f2)
-    }
-
     val N = operands.length
     val dp = Array.fill(N, N + 1)((0L, 0L))
     for (i <- 0 until N)
@@ -34,9 +28,13 @@ object TheBooleanOrder {
       for (start <- 0 to N - len) {
         val end = start + len - 1
         dp(start)(len) = (start until end).map(mid => {
-          val left = dp(start)(mid - start + 1) //[start,mid]子串
-          val right = dp(mid + 1)(end - mid) //(mid,end]子串
-          combine(left._1, left._2, right._1, right._2, operators(mid))
+          val (t1, f1) = dp(start)(mid - start + 1) //[start,mid]子串
+          val (t2, f2) = dp(mid + 1)(end - mid) //(mid,end]子串
+          operators(mid) match {
+            case '&' => (t1 * t2, t1 * f2 + t2 * f1 + f1 * f2)
+            case '|' => (t1 * f2 + t2 * f1 + t1 * t2, f1 * f2)
+            case '^' => (t1 * f2 + t2 * f1, t1 * t2 + f1 * f2)
+          }
         }).foldLeft((0L, 0L))((s, c) => (s._1 + c._1, s._2 + c._2))
       }
     }
