@@ -28,7 +28,8 @@ object TheBooleanOrder {
 
     val N = operands.length
     val dp = Array.fill(N, N + 1)((0L, 0L))
-    for (i <- 0 until N) dp(i)(1) = (if (operands(i) == 't') 1L else 0L, if (operands(i) == 'f') 1L else 0L)
+    for (i <- 0 until N)
+      dp(i)(1) = (if (operands(i) == 't') 1L else 0L, if (operands(i) == 'f') 1L else 0L)
     for (len <- 2 to N) {
       for (start <- 0 to N - len) {
         val end = start + len - 1
